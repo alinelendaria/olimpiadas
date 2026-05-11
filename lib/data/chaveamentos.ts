@@ -907,6 +907,52 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'poker',
+    nome: 'Poker (Individual)',
+    icone: '♠️',
+    status: 'em_andamento',
+    totalParticipantes: 18,
+    campeao: null,
+    fases: [
+      {
+        id: 'mesa1',
+        nome: 'Mesa 1',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Philipe',  delegacao: 'cu' }, jogador2: { nome: 'Leo Lele', delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Ferreira', delegacao: 'py' }, jogador2: { nome: 'Calili',   delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Cururu',   delegacao: 'kr' }, jogador2: { nome: 'Everton',  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'mesa2',
+        nome: 'Mesa 2',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Balotelli', delegacao: 'cu' }, jogador2: { nome: 'Pagniez', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Sicko',     delegacao: 'au' }, jogador2: { nome: 'Zampah',  delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Ale',       delegacao: 'kr' }, jogador2: { nome: 'Dolas',   delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'mesa3',
+        nome: 'Mesa 3',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Cueio',    delegacao: 'cu' }, jogador2: { nome: 'ItxBreak', delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Thiago',   delegacao: 'au' }, jogador2: { nome: 'Aline',    delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Fpzin',    delegacao: 'cu' }, jogador2: null,                                  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final (Mesa)',
+        partidas: [
+          { id: 1, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 1 }, jogador2FromFase: { faseId: 'mesa2', partidaId: 1 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 2 }, jogador2FromFase: { faseId: 'mesa2', partidaId: 2 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 3 }, jogador2FromFase: { faseId: 'mesa3', partidaId: 1 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'esgrima',
     nome: 'Esgrima (x1)',
     icone: '🤺',

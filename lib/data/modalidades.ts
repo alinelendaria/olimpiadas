@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'poker',
+    nome: 'Poker (Individual)',
+    tipo: 'special',
+    descricao: '3 mesas de 6 jogadores. Os 2 melhores de cada mesa avançam para a grande final.',
+    icone: '♠️',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 18,
+    maxPorDelegacao: 3,
+  },
+  {
     id: 'judo',
     nome: 'Judô (x1)',
     tipo: 'x1',
