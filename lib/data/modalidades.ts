@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'jogo-das-cadeiras',
+    nome: 'Jogo das Cadeiras (Individual)',
+    tipo: 'special',
+    descricao: '5 eliminatórias com 10 jogadores. Os 2 últimos sobreviventes de cada avançam para a final.',
+    icone: '🪑',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 50,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'corrida',
     nome: 'Corrida (Individual)',
     tipo: 'special',
