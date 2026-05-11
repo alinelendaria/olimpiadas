@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'atletismo',
+    nome: 'Atletismo (Individual)',
+    tipo: 'special',
+    descricao: '7 pistas com 6 jogadores. Top 2 de cada avança (top 3 na última pista).',
+    icone: '👟',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 42,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'survival-alternativo',
     nome: 'Survival Alternativo (Individual)',
     tipo: 'special',
