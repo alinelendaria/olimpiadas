@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { getDelegacaoById } from '@/lib/data/delegacoes';
-import type { Partida } from '@/types';
+import type { Match } from '@/types';
 
 interface Props {
-  match: Partida;
+  match: Match;
 }
 
 export default function MatchCard({ match }: Props) {
