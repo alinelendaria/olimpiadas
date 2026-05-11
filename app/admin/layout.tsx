@@ -13,7 +13,7 @@ const ADMIN_LINKS = [
   { href: '/admin/jogadores',    label: 'Jogadores',    icon: Users },
 ];
 
-const ADMIN_PASSWORD = 'tdj2024';
+const ADMIN_PASSWORD = 'tdj2026';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [authenticated, setAuthenticated] = useState(false);

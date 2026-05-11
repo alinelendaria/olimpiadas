@@ -18,9 +18,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 font-bold text-gray-900 mb-1">
               <span>🏅</span>
-              <span>TDJ Olympics Haxball</span>
+              <span>Olimpíadas TDJ</span>
             </div>
-            <p className="text-sm text-gray-400">1ª Edição · Comunidade TDJ</p>
+            <p className="text-sm text-gray-400">3ª Edição · Comunidade TDJ</p>
           </div>
 
           {/* Links */}

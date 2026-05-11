@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { DELEGACOES } from '@/lib/data/delegacoes';
 
 const TIMELINE = [
-  { date: 'Maio 2024',   icon: '📢', title: 'Anúncio das Olimpíadas TDJ',    desc: 'A ideia de criar um evento olímpico para a comunidade TDJ Haxball foi anunciada. A empolgação foi imediata.' },
-  { date: 'Junho 2024',  icon: '🌍', title: 'Formação das Delegações',        desc: 'Nove delegações foram formadas representando diferentes países. Cada delegação escolheu seus atletas.' },
-  { date: 'Julho 2024',  icon: '⚔️', title: 'Início das Competições',          desc: 'As primeiras partidas começaram! Modalidades X1, X2, X3 e Shootout entraram em andamento.' },
-  { date: 'Agosto 2024', icon: '🏆', title: 'Grande Final',                   desc: 'Cerimônia de encerramento e finais de todas as modalidades programadas para agosto de 2024.' },
+  { date: 'Maio 2026',   icon: '📢', title: 'Anúncio das Olimpíadas TDJ',    desc: 'A ideia de criar um evento olímpico para a comunidade TDJ Haxball foi anunciada. A empolgação foi imediata.' },
+  { date: 'Junho 2026',  icon: '🌍', title: 'Formação das Delegações',        desc: 'Nove delegações foram formadas representando diferentes países. Cada delegação escolheu seus atletas.' },
+  { date: 'Julho 2026',  icon: '⚔️', title: 'Início das Competições',          desc: 'As primeiras partidas começaram! Modalidades X1, X2, X3 e Shootout entraram em andamento.' },
+  { date: 'Agosto 2026', icon: '🏆', title: 'Grande Final',                   desc: 'Cerimônia de encerramento e finais de todas as modalidades programadas para agosto de 2026.' },
 ];
 
 export default function HistoricoPage() {
@@ -23,9 +23,9 @@ export default function HistoricoPage() {
         <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 flex items-center gap-4 mb-10">
           <span className="text-4xl">🥇</span>
           <div>
-            <p className="text-lg font-bold text-amber-900">1ª Edição — Olimpíadas TDJ Haxball</p>
+            <p className="text-lg font-bold text-amber-900">3ª Edição — Olimpíadas TDJ Haxball</p>
             <p className="text-sm text-amber-700 mt-0.5">
-              {DELEGACOES.length} delegações · {totalPlayers} atletas · 7 modalidades · 2024
+              {DELEGACOES.length} delegações · {totalPlayers} atletas · 7 modalidades · 2026
             </p>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function HistoricoPage() {
 
         {/* Delegations grid */}
         <div className="mt-12">
-          <h2 className="text-base font-semibold text-gray-700 mb-4">Delegações da 1ª Edição</h2>
+          <h2 className="text-base font-semibold text-gray-700 mb-4">Delegações da 3ª Edição</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {DELEGACOES.map((d) => (
               <div key={d.id} className="bg-white border border-gray-100 rounded-xl p-4 flex items-center gap-3 shadow-card">

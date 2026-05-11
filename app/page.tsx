@@ -14,19 +14,6 @@ export default function HomePage() {
       <LatestResults />
       <GeneralRanking />
 
-      {/* MVP placeholder */}
-      <section className="py-14 border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="bg-amber-50 border border-amber-100 rounded-xl p-8 text-center">
-            <span className="text-4xl mb-3 block">⭐</span>
-            <h2 className="text-lg font-bold text-amber-900 mb-1">MVP da Semana</h2>
-            <p className="text-sm text-amber-700">
-              Será anunciado após as primeiras partidas. Fique ligado!
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 border-t border-gray-100 bg-subtle">
         <div className="max-w-2xl mx-auto px-4 text-center">

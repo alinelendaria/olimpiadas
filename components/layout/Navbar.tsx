@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-gray-900 text-base tracking-tight">
           <span className="text-xl">🏅</span>
-          <span>TDJ <span className="text-accent">Olympics</span></span>
+          <span>Olimpíadas <span className="text-accent">TDJ</span></span>
         </Link>
 
         {/* Desktop links */}

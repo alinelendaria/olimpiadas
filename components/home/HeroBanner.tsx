@@ -20,12 +20,12 @@ export default function HeroBanner() {
             transition={{ duration: 0.45 }}
           >
             <span className="inline-block text-xs font-semibold tracking-widest text-accent uppercase mb-4 bg-accent-light px-3 py-1 rounded-full">
-              1ª Edição · 2024
+              3ª Edição · 2026
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-              TDJ Olympics{' '}
-              <span className="text-accent">Haxball</span>
+              Olimpíadas{' '}
+              <span className="text-accent">TDJ</span>
             </h1>
 
             <p className="text-gray-500 text-lg mb-8 max-w-lg mx-auto lg:mx-0">

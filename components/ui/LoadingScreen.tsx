@@ -25,7 +25,7 @@ export default function LoadingScreen() {
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white"
         >
           <span className="text-5xl mb-4">🏅</span>
-          <p className="text-base font-bold text-gray-900 mb-5">TDJ Olympics Haxball</p>
+          <p className="text-base font-bold text-gray-900 mb-5">Olimpíadas TDJ</p>
           <div className="w-48 h-1 bg-gray-100 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-accent rounded-full"

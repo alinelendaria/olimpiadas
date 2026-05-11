@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const EVENT_DATE = new Date('2024-08-10T14:00:00');
+const EVENT_DATE = new Date('2026-08-10T14:00:00');
 
 function pad(n: number) {
   return String(n).padStart(2, '0');
@@ -40,7 +40,7 @@ export default function Countdown() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <p className="text-xs text-gray-400 uppercase tracking-widest font-medium">Evento começa em</p>
-          <p className="text-sm font-semibold text-gray-700 mt-0.5">10 de Agosto de 2024 · 14h00</p>
+          <p className="text-sm font-semibold text-gray-700 mt-0.5">10 de Agosto de 2026 · 14h00</p>
         </div>
 
         <div className="flex items-center gap-3 sm:gap-5">
