@@ -289,6 +289,18 @@ export const MODALIDADES: Modality[] = [
     participantes: 46,
     maxPorDelegacao: 6,
   },
+  {
+    id: 'truco',
+    nome: 'Truco (Duplas)',
+    tipo: 'x1',
+    descricao: 'Confronto de duplas de truco. Uma dupla vs outra dupla.',
+    icone: '🃏',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 16,
+    maxPorDelegacao: 4,
+  },
 ];
 
 export function getModalidadeById(id: string): Modality | undefined {
