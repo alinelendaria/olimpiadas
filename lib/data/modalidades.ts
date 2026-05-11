@@ -26,6 +26,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'tiro-com-arco-duplas',
+    nome: 'Tiro com Arco (Duplas)',
+    tipo: 'x1',
+    descricao: 'Confronto de duplas de tiro com arco. Uma dupla vs outra dupla.',
+    icone: '🏹',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'wrestling',
     nome: 'Wrestling (x1)',
     tipo: 'x1',
