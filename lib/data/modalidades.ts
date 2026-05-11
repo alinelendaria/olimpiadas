@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'corrida',
+    nome: 'Corrida (Individual)',
+    tipo: 'special',
+    descricao: '5 eliminatórias (4 com 9 e 1 com 10 jogadores). Top 2 de cada avança para a final.',
+    icone: '🏁',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 45,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'atletismo',
     nome: 'Atletismo (Individual)',
     tipo: 'special',
