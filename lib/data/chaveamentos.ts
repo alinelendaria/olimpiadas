@@ -380,7 +380,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'tenis-de-mesa',
-    nome: 'Tênis de Mesa',
+    nome: 'Tênis de Mesa (x1)',
     icone: '🏓',
     status: 'em_andamento',
     totalParticipantes: 46,
@@ -470,7 +470,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'tenis',
-    nome: 'Tênis',
+    nome: 'Tênis (x1)',
     icone: '🎾',
     status: 'em_andamento',
     totalParticipantes: 46,
@@ -560,7 +560,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'sniper',
-    nome: 'Sniper',
+    nome: 'Sniper (x1)',
     icone: '🪄',
     status: 'em_andamento',
     totalParticipantes: 52,
@@ -657,7 +657,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'sinuca',
-    nome: 'Sinuca',
+    nome: 'Sinuca (x1)',
     icone: '🎱',
     status: 'em_andamento',
     totalParticipantes: 44,
@@ -744,7 +744,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'bocha',
-    nome: 'Bocha',
+    nome: 'Bocha (x1)',
     icone: '🥏',
     status: 'em_andamento',
     totalParticipantes: 36,
@@ -823,7 +823,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'basquete',
-    nome: 'Basquete',
+    nome: 'Basquete (x1)',
     icone: '🏀',
     status: 'em_andamento',
     totalParticipantes: 46,
