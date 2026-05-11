@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'survival-alternativo',
+    nome: 'Survival Alternativo (Individual)',
+    tipo: 'special',
+    descricao: '4 eliminatórias com 12 jogadores. Top 4 de cada avança para a final com 16.',
+    icone: '🎡',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 48,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'survival',
     nome: 'Survival (Individual)',
     tipo: 'special',
