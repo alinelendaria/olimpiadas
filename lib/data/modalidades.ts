@@ -110,6 +110,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'tenis-duplas',
+    nome: 'Tênis (Duplas)',
+    tipo: 'x1',
+    descricao: 'Confronto de duplas de tênis. Uma dupla vs outra dupla.',
+    icone: '🎾',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'sniper',
     nome: 'Sniper (x1)',
     tipo: 'x1',
