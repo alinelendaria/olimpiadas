@@ -1,0 +1,984 @@
+import type { Chaveamento, BracketFase, BracketPartida } from '@/types';
+
+// Helper to create a placeholder match where both players come from previous phase winners
+function fromFase(id: number, faseId1: string, p1: number, faseId2: string, p2: number): BracketPartida {
+  return {
+    id,
+    jogador1: null, jogador2: null,
+    jogador1FromFase: { faseId: faseId1, partidaId: p1 },
+    jogador2FromFase: { faseId: faseId2, partidaId: p2 },
+    vencedor: null, placar1: null, placar2: null, status: 'pendente',
+  };
+}
+
+export const CHAVEAMENTOS: Chaveamento[] = [
+  {
+    id: 'tiro-ao-alvo',
+    nome: 'Tiro ao Alvo',
+    icone: '🎯',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Brunin',                        delegacao: 'tr' }, jogador2: { nome: 'Bodones',                        delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Hulk Paraíba',                  delegacao: 'kr' }, jogador2: { nome: 'Barajas',                        delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Cururu',                        delegacao: 'kr' }, jogador2: { nome: 'GdToPuto',                       delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Pagniez',                       delegacao: 'cu' }, jogador2: { nome: 'Clive',                          delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Raul',                          delegacao: 'au' }, jogador2: { nome: 'Aline',                          delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Nemo',                          delegacao: 'kr' }, jogador2: { nome: 'Everton',                        delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Levi',                          delegacao: 'kr' }, jogador2: { nome: 'Romero',                         delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Splat',                         delegacao: 'fr' }, jogador2: { nome: 'ItxBreak',                       delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Ale',                           delegacao: 'kr' }, jogador2: { nome: 'Lipi',                           delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Ex Rouba Gol',                  delegacao: 'jp' }, jogador2: { nome: 'SPFC Supercampeão',              delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Exausto',                       delegacao: 'jp' }, jogador2: { nome: 'Leo Lele',                       delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Fedits',                        delegacao: 'py' }, jogador2: { nome: 'Cueio',                          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Ferreira',                      delegacao: 'py' }, jogador2: { nome: 'Jetta',                          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Calili',                        delegacao: 'fr' }, jogador2: { nome: 'Van Persie',                     delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Shirato',                       delegacao: 'tr' }, jogador2: { nome: 'Punha',                          delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Philipe',                       delegacao: 'cu' }, jogador2: { nome: 'Deyverson O Último Romântico',   delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Dolas',            delegacao: 'jp' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Dr. Hannibal Lecter', delegacao: 'cu' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Crise',            delegacao: 'py' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Sue',              delegacao: 'fr' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Jofi',             delegacao: 'mx' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Kakalvo',          delegacao: 'tr' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Balotelli',        delegacao: 'cu' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'GRG',              delegacao: 'jp' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Choose',           delegacao: 'fr' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Zampah',           delegacao: 'au' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Sirhoi',           delegacao: 'tr' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Wjen',             delegacao: 'fr' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Sicko',            delegacao: 'au' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Fpzin',            delegacao: 'cu' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Kayn',             delegacao: 'py' }, jogador2: null, jogador2FromRep: 15, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'GK Mão de Dino',  delegacao: 'fr' }, jogador2: null, jogador2FromRep: 16, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'tiro-com-arco',
+    nome: 'Tiro com Arco',
+    icone: '🏹',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Iniciante',                  delegacao: 'mx' }, jogador2: { nome: 'Nemo',                       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'SPFC Supercampeão',          delegacao: 'tr' }, jogador2: { nome: 'Barajas',                    delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Shirato',                    delegacao: 'tr' }, jogador2: { nome: 'Clive',                      delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Crise',                      delegacao: 'py' }, jogador2: { nome: 'Lipi',                       delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Everton',                    delegacao: 'cu' }, jogador2: { nome: 'Bodones',                    delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Ferreira',                   delegacao: 'py' }, jogador2: { nome: 'Aline',                      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Splat',                      delegacao: 'fr' }, jogador2: { nome: 'Raul',                       delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Ale',                        delegacao: 'kr' }, jogador2: { nome: 'Balotelli',                  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Philipe',                    delegacao: 'cu' }, jogador2: { nome: 'Exausto',                    delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Romero',                     delegacao: 'tr' }, jogador2: { nome: 'Pagniez',                    delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Ex Rouba Gol',               delegacao: 'jp' }, jogador2: { nome: 'Kakalvo',                    delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Fpzin',                      delegacao: 'cu' }, jogador2: { nome: 'Deyverson Último Romântico', delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Leo Lele',                   delegacao: 'au' }, jogador2: { nome: 'Fedits',                     delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Sicko',                      delegacao: 'au' }, jogador2: { nome: 'Dr. Hannibal Lecter',        delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Soft',                       delegacao: 'au' }, jogador2: { nome: 'Choose',                     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Sue',                        delegacao: 'fr' }, jogador2: { nome: 'Jofi',                       delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Calili',       delegacao: 'fr' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Cueio',        delegacao: 'cu' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Wjen',         delegacao: 'fr' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Hulk Paraíba', delegacao: 'kr' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Brunin',       delegacao: 'tr' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Zampah',       delegacao: 'au' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Punha',        delegacao: 'mx' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'ItxBreak',     delegacao: 'au' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Levi',         delegacao: 'kr' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Cururu',       delegacao: 'kr' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Jetta',        delegacao: 'cu' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Sirhoi',       delegacao: 'tr' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'GdToPuto',     delegacao: 'fr' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Dolas',        delegacao: 'jp' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Van Persie',   delegacao: 'tr' }, jogador2: null, jogador2FromRep: 15, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'GRG',          delegacao: 'jp' }, jogador2: null, jogador2FromRep: 16, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [
+          fromFase(1, 'semifinal', 1, 'semifinal', 2),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wrestling',
+    nome: 'Wrestling',
+    icone: '🤼‍♂️',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Everton',                      delegacao: 'cu' }, jogador2: { nome: 'Punha',                          delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Hulk Paraíba',                 delegacao: 'kr' }, jogador2: { nome: 'Crise',                          delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Philipe',                      delegacao: 'cu' }, jogador2: { nome: 'Bodones',                        delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Wjen',                         delegacao: 'fr' }, jogador2: { nome: 'Brunin',                         delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Deyverson Último Romântico',   delegacao: 'kr' }, jogador2: { nome: 'Ferreira',                       delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Pagniez',                      delegacao: 'cu' }, jogador2: { nome: 'Jofi',                           delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'ItxBreak',                     delegacao: 'au' }, jogador2: { nome: 'Fedits',                         delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Cururu',                       delegacao: 'kr' }, jogador2: { nome: 'Raul',                           delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Ex Rouba Gol',                 delegacao: 'jp' }, jogador2: { nome: 'Iniciante',                      delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Van Persie',                   delegacao: 'tr' }, jogador2: { nome: 'Kayn',                           delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Dr. Hannibal Lecter',          delegacao: 'cu' }, jogador2: { nome: 'Pedro #21',                      delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Shirato',                      delegacao: 'tr' }, jogador2: { nome: 'Levi',                           delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Aline',                        delegacao: 'jp' }, jogador2: { nome: 'Ale',                            delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Zampah',                       delegacao: 'au' }, jogador2: { nome: 'Sue',                            delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Lipi',                         delegacao: 'au' }, jogador2: { nome: 'GRG',                            delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Sirhoi',                       delegacao: 'tr' }, jogador2: { nome: 'Fpzin',                          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'SPFC Supercampeão', delegacao: 'tr' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Leo Lele',          delegacao: 'au' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Calili',            delegacao: 'fr' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Dolas',             delegacao: 'jp' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Sicko',             delegacao: 'au' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Kakalvo',           delegacao: 'tr' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Cueio',             delegacao: 'cu' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Jetta',             delegacao: 'cu' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Romero',            delegacao: 'tr' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Barajas',           delegacao: 'mx' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Clive',             delegacao: 'au' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Balotelli',         delegacao: 'cu' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Lenin',             delegacao: 'tr' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Exausto',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Choose',            delegacao: 'fr' }, jogador2: null, jogador2FromRep: 15, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Nemo',              delegacao: 'kr' }, jogador2: null, jogador2FromRep: 16, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'boxe',
+    nome: 'Boxe',
+    icone: '🥊',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Bodones',              delegacao: 'mx' }, jogador2: { nome: 'Everton',           delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Dolas',                delegacao: 'jp' }, jogador2: { nome: 'Romero',            delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'SPFC Supercampeão',    delegacao: 'tr' }, jogador2: { nome: 'Choose',            delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Raul',                 delegacao: 'au' }, jogador2: { nome: 'Jetta',             delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Levi',                 delegacao: 'kr' }, jogador2: { nome: 'Ex Rouba Gol',      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Ale',                  delegacao: 'kr' }, jogador2: { nome: 'Wjen',              delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Balotelli',            delegacao: 'cu' }, jogador2: { nome: 'Crise',             delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Zampah',               delegacao: 'au' }, jogador2: { nome: 'Aline',             delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'GRG',                  delegacao: 'jp' }, jogador2: { nome: 'Brunin',            delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Dr. Hannibal Lecter',  delegacao: 'cu' }, jogador2: { nome: 'Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Calili',               delegacao: 'fr' }, jogador2: { nome: 'Sicko',             delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Splat',                delegacao: 'fr' }, jogador2: { nome: 'Kayn',              delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Kakalvo',              delegacao: 'tr' }, jogador2: { nome: 'Cururu',            delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Shirato',              delegacao: 'tr' }, jogador2: { nome: 'Jofi',              delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Sue',                  delegacao: 'fr' }, jogador2: { nome: 'Philipe',           delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Fpzin',                delegacao: 'cu' }, jogador2: { nome: 'Fedits',            delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Leo Lele',            delegacao: 'au' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Cueio',               delegacao: 'cu' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Clive',               delegacao: 'au' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Sirhoi',              delegacao: 'tr' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'ItxBreak',            delegacao: 'au' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Pagniez',             delegacao: 'cu' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Lipi',                delegacao: 'au' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Ferreira',            delegacao: 'py' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Deyverson Romântico', delegacao: 'kr' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Valenttino',          delegacao: 'kr' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Hulk Paraíba',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Punha',               delegacao: 'mx' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Exausto',             delegacao: 'jp' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Nemo',                delegacao: 'kr' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Barajas',             delegacao: 'mx' }, jogador2: null, jogador2FromRep: 15, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Iniciante',           delegacao: 'mx' }, jogador2: null, jogador2FromRep: 16, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'tenis-de-mesa',
+    nome: 'Tênis de Mesa',
+    icone: '🏓',
+    status: 'em_andamento',
+    totalParticipantes: 46,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Deyverson Romântico',  delegacao: 'kr' }, jogador2: { nome: 'Iniciante',  delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Clive',                delegacao: 'au' }, jogador2: { nome: 'Choose',     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Zampah',               delegacao: 'au' }, jogador2: { nome: 'Punha',      delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Dolas',                delegacao: 'jp' }, jogador2: { nome: 'Ferreira',   delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Dr. Hannibal Lecter',  delegacao: 'cu' }, jogador2: { nome: 'Sue',        delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Hasbulla',             delegacao: 'jp' }, jogador2: { nome: 'Ale',        delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'GRG',                  delegacao: 'jp' }, jogador2: { nome: 'Nemo',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Raul',                 delegacao: 'au' }, jogador2: { nome: 'Calili',     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Philipe',              delegacao: 'cu' }, jogador2: { nome: 'Brunin',     delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Aline',                delegacao: 'jp' }, jogador2: { nome: 'Wjen',       delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Leo Lele',             delegacao: 'au' }, jogador2: { nome: 'Shirato',    delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Hulk Paraíba',         delegacao: 'kr' }, jogador2: { nome: 'Everton',    delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Cueio',                delegacao: 'cu' }, jogador2: { nome: 'Zidani',     delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Bodones',              delegacao: 'mx' }, jogador2: { nome: 'ItxBreak',   delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'SPFC Supercampeão', delegacao: 'tr' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Kakalvo',           delegacao: 'tr' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Exausto',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Lipi',              delegacao: 'au' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Crise',             delegacao: 'py' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Pagniez',           delegacao: 'cu' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Ex Rouba Gol',      delegacao: 'jp' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Van Persie',        delegacao: 'tr' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Sicko',             delegacao: 'au' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Jofi',              delegacao: 'mx' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Levi',              delegacao: 'kr' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Romero',            delegacao: 'tr' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Fedits',            delegacao: 'py' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Jetta',             delegacao: 'cu' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          // Ambos já classificados direto (sem repescagem)
+          { id: 15, jogador1: { nome: 'Balotelli',         delegacao: 'cu' }, jogador2: { nome: 'Barajas', delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Fpzin',             delegacao: 'cu' }, jogador2: { nome: 'Lenin',   delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'tenis',
+    nome: 'Tênis',
+    icone: '🎾',
+    status: 'em_andamento',
+    totalParticipantes: 46,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Sue',                  delegacao: 'fr' }, jogador2: { nome: 'Jofi',         delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Levi',                 delegacao: 'kr' }, jogador2: { nome: 'Romero',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Barajas',              delegacao: 'mx' }, jogador2: { nome: 'Hulk Paraíba', delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Wjen',                 delegacao: 'fr' }, jogador2: { nome: 'Xz',           delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Leo Lele',             delegacao: 'au' }, jogador2: { nome: 'Cueio',        delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Philipe',              delegacao: 'cu' }, jogador2: { nome: 'Clive',        delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Fpzin',                delegacao: 'cu' }, jogador2: { nome: 'Aline',        delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Dr. Hannibal Lecter',  delegacao: 'cu' }, jogador2: { nome: 'Cururu',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Ferreira',             delegacao: 'py' }, jogador2: { nome: 'Everton',      delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Fedits',               delegacao: 'py' }, jogador2: { nome: 'Thiago',       delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Deyverson Romântico',  delegacao: 'kr' }, jogador2: { nome: 'Lipi',         delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Dolas',                delegacao: 'jp' }, jogador2: { nome: 'Van Persie',   delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Crise',                delegacao: 'py' }, jogador2: { nome: 'Shirato',      delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Punha',                delegacao: 'mx' }, jogador2: { nome: 'Exausto',      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Pagniez',           delegacao: 'cu' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Zampah',            delegacao: 'au' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Balotelli',         delegacao: 'cu' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Kakalvo',           delegacao: 'tr' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Nemo',              delegacao: 'kr' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Bodones',           delegacao: 'mx' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'ItxBreak',          delegacao: 'au' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Sicko',             delegacao: 'au' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'GRG',               delegacao: 'jp' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Ex Rouba Gol',      delegacao: 'jp' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Iniciante',         delegacao: 'mx' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Raul',              delegacao: 'au' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Choose',            delegacao: 'fr' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Brunin',            delegacao: 'tr' }, jogador2: null, jogador2FromRep: 14, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          // Ambos já classificados direto
+          { id: 15, jogador1: { nome: 'SPFC Supercampeão', delegacao: 'tr' }, jogador2: { nome: 'Calili',   delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Jetta',             delegacao: 'cu' }, jogador2: { nome: 'Hasbulla', delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'sniper',
+    nome: 'Sniper',
+    icone: '🪄',
+    status: 'em_andamento',
+    totalParticipantes: 52,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Iniciante',           delegacao: 'mx' }, jogador2: { nome: 'Jetta',            delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Choose',              delegacao: 'fr' }, jogador2: { nome: 'Cururu',           delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Crise',               delegacao: 'py' }, jogador2: { nome: 'Romero',           delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Fedits',              delegacao: 'py' }, jogador2: { nome: 'Valenttino',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Raul',                delegacao: 'au' }, jogador2: { nome: 'Van Persie',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Cueio',               delegacao: 'cu' }, jogador2: { nome: 'Aline',            delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Zampah',              delegacao: 'au' }, jogador2: { nome: 'SPFC Supercampeão',delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Sicko',               delegacao: 'au' }, jogador2: { nome: 'Sirhoi',           delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Bodones',             delegacao: 'mx' }, jogador2: { nome: 'Wjen',             delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Barajas',             delegacao: 'mx' }, jogador2: { nome: 'Shirato',          delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Haxx',                delegacao: 'un' }, jogador2: { nome: 'Pagniez',          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Fpzin',               delegacao: 'cu' }, jogador2: { nome: 'GdToPuto',         delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Kakalvo',             delegacao: 'tr' }, jogador2: { nome: 'Pedro #21',        delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Dor',                 delegacao: 'un' }, jogador2: { nome: 'Everton',          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'ItxBreak',            delegacao: 'au' }, jogador2: { nome: 'Xz',               delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Nemo',                delegacao: 'kr' }, jogador2: { nome: 'Clive',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 17, jogador1: { nome: 'Hulk Paraíba',        delegacao: 'kr' }, jogador2: { nome: 'Balotelli',        delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 18, jogador1: { nome: 'Thiago',              delegacao: 'au' }, jogador2: { nome: 'Philipe',          delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 19, jogador1: { nome: 'Brunin',              delegacao: 'tr' }, jogador2: { nome: 'Calili',           delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 20, jogador1: { nome: 'Jofi',                delegacao: 'mx' }, jogador2: { nome: 'Dr. Hannibal Lecter', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          // Classificado direto vs vencedor da repescagem
+          { id: 1,  jogador1: { nome: 'Levi',          delegacao: 'kr' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Exausto',       delegacao: 'jp' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Sue',           delegacao: 'fr' }, jogador2: null, jogador2FromRep: 20, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Lipi',          delegacao: 'au' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Zidani',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Ferreira',      delegacao: 'py' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Ex Rouba Gol',  delegacao: 'jp' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Dolas',         delegacao: 'jp' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Leo Lele',      delegacao: 'au' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'GRG',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Punha',         delegacao: 'mx' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'GK Mão de Dino',delegacao: 'fr' }, jogador2: null, jogador2FromRep: 13, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          // Ambos vêm de repescagem
+          { id: 13, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'repescagem', partidaId: 12 }, jogador2FromFase: { faseId: 'repescagem', partidaId: 15 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'repescagem', partidaId: 14 }, jogador2FromFase: { faseId: 'repescagem', partidaId: 16 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'repescagem', partidaId: 17 }, jogador2FromFase: { faseId: 'repescagem', partidaId: 19 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'repescagem', partidaId: 18 }, jogador2FromFase: { faseId: 'repescagem', partidaId: 3  }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'sinuca',
+    nome: 'Sinuca',
+    icone: '🎱',
+    status: 'em_andamento',
+    totalParticipantes: 44,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Hulk Paraíba',        delegacao: 'kr' }, jogador2: { nome: 'Jofi',              delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Zampa',               delegacao: 'au' }, jogador2: { nome: 'Pagniez',           delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Ferreira',            delegacao: 'py' }, jogador2: { nome: 'Leo Lele',          delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Shirato',             delegacao: 'tr' }, jogador2: { nome: 'Dolas',             delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Dr. Hannibal Lecter', delegacao: 'cu' }, jogador2: { nome: 'Barajas',           delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Ale',                 delegacao: 'kr' }, jogador2: { nome: 'Sicko',             delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Levi',                delegacao: 'kr' }, jogador2: { nome: 'Ex Rouba Gol',      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Everton',             delegacao: 'cu' }, jogador2: { nome: 'Raul',              delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Brunin',              delegacao: 'tr' }, jogador2: { nome: 'Valenttino',        delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Exausto',             delegacao: 'jp' }, jogador2: { nome: 'Bodones',           delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Calili',              delegacao: 'fr' }, jogador2: { nome: 'Clive',             delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Nemo',                delegacao: 'kr' }, jogador2: { nome: 'Aline',             delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Cueio',         delegacao: 'cu' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Van Persie',    delegacao: 'tr' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Choose',        delegacao: 'fr' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Zidani',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'SPFC',          delegacao: 'tr' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Punha',         delegacao: 'mx' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Lipi',          delegacao: 'au' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Romero',        delegacao: 'tr' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Thiago',        delegacao: 'au' }, jogador2: null, jogador2FromRep: 9,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Wjen',          delegacao: 'fr' }, jogador2: null, jogador2FromRep: 10, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'GRG',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 11, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Fpzin',         delegacao: 'cu' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'ItxBreak',      delegacao: 'au' }, jogador2: { nome: 'Sue',                    delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Crise',         delegacao: 'py' }, jogador2: { nome: 'Jetta',                  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Balotelli',     delegacao: 'cu' }, jogador2: { nome: 'Deyverson Romântico',    delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Fedits',        delegacao: 'py' }, jogador2: { nome: 'Philipe',                delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'bocha',
+    nome: 'Bocha',
+    icone: '🥏',
+    status: 'em_andamento',
+    totalParticipantes: 36,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Barajas',  delegacao: 'mx' }, jogador2: { nome: 'Fpzin',                delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Bodones',  delegacao: 'mx' }, jogador2: { nome: 'Deyverson Romântico',  delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Shirato',  delegacao: 'tr' }, jogador2: { nome: 'Dr. Hannibal Lecter',  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Crise',    delegacao: 'py' }, jogador2: { nome: 'Dolas',                delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Punha',       delegacao: 'mx' }, jogador2: { nome: 'Levi',         delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Van Persie',  delegacao: 'tr' }, jogador2: { nome: 'ItxBreak',     delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Pagniez',     delegacao: 'cu' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Aline',       delegacao: 'jp' }, jogador2: { nome: 'Lipi',         delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Fedits',      delegacao: 'py' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Nemo',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Hulk Paraíba',delegacao: 'kr' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Wjen',        delegacao: 'fr' }, jogador2: { nome: 'Sicko',        delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Ferreira',    delegacao: 'py' }, jogador2: { nome: 'Everton',      delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Balotelli',   delegacao: 'cu' }, jogador2: { nome: 'Brunin',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Kakalvo',     delegacao: 'tr' }, jogador2: { nome: 'Choose',       delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Exausto',     delegacao: 'jp' }, jogador2: { nome: 'Sue',          delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Zampah',      delegacao: 'au' }, jogador2: { nome: 'GRG',          delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Philipe',     delegacao: 'cu' }, jogador2: { nome: 'Ex Rouba Gol', delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Jetta',       delegacao: 'cu' }, jogador2: { nome: 'Raul',         delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: { nome: 'Cueio',       delegacao: 'cu' }, jogador2: { nome: 'Leo Lele',     delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: 'basquete',
+    nome: 'Basquete',
+    icone: '🏀',
+    status: 'em_andamento',
+    totalParticipantes: 46,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'GRG',                  delegacao: 'jp' }, jogador2: { nome: 'GdToPuto',           delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Philipe',              delegacao: 'cu' }, jogador2: { nome: 'SPFC',               delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Dolas',                delegacao: 'jp' }, jogador2: { nome: 'Brunin',             delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Van Persie',           delegacao: 'tr' }, jogador2: { nome: 'Hulk Paraíba',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Shirato',              delegacao: 'tr' }, jogador2: { nome: 'Ferreira',           delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'ItxBreak',             delegacao: 'au' }, jogador2: { nome: 'Pagniez',            delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Exausto',              delegacao: 'jp' }, jogador2: { nome: 'Raul',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Hasbulla',             delegacao: 'jp' }, jogador2: { nome: 'Fpzin',              delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Sue',                  delegacao: 'fr' }, jogador2: { nome: 'Deyverson Romântico',delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Nemo',                 delegacao: 'kr' }, jogador2: { nome: 'Everton',            delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'r16',
+        nome: '16 Avos de Final',
+        partidas: [
+          { id: 1,  jogador1: { nome: 'Barajas',      delegacao: 'mx' }, jogador2: null, jogador2FromRep: 1,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2,  jogador1: { nome: 'Ex Rouba Gol', delegacao: 'jp' }, jogador2: null, jogador2FromRep: 2,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3,  jogador1: { nome: 'Wjen',         delegacao: 'fr' }, jogador2: null, jogador2FromRep: 3,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Xz',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 4,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5,  jogador1: { nome: 'Balotelli',    delegacao: 'cu' }, jogador2: null, jogador2FromRep: 5,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6,  jogador1: { nome: 'Aline',        delegacao: 'jp' }, jogador2: null, jogador2FromRep: 6,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Jetta',        delegacao: 'cu' }, jogador2: null, jogador2FromRep: 7,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8,  jogador1: { nome: 'Crise',        delegacao: 'py' }, jogador2: null, jogador2FromRep: 8,  vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 9,  jogador1: { nome: 'Cururu',       delegacao: 'kr' }, jogador2: { nome: 'Choose',               delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 10, jogador1: { nome: 'Cueio',        delegacao: 'cu' }, jogador2: { nome: 'Sicko',                delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 11, jogador1: { nome: 'Punha',        delegacao: 'mx' }, jogador2: { nome: 'Zampah',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 12, jogador1: { nome: 'Iniciante',    delegacao: 'mx' }, jogador2: { nome: 'Romero',               delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 13, jogador1: { nome: 'Leo Lele',     delegacao: 'au' }, jogador2: { nome: 'Bodones',              delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 14, jogador1: { nome: 'Kakalvo',      delegacao: 'tr' }, jogador2: { nome: 'Dr. Hannibal Lecter',  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Lipi',         delegacao: 'au' }, jogador2: { nome: 'Jofi',                 delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 16, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'repescagem', partidaId: 9 }, jogador2FromFase: { faseId: 'repescagem', partidaId: 10 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          fromFase(1, 'r16', 1,  'r16', 2),
+          fromFase(2, 'r16', 3,  'r16', 4),
+          fromFase(3, 'r16', 5,  'r16', 6),
+          fromFase(4, 'r16', 7,  'r16', 8),
+          fromFase(5, 'r16', 9,  'r16', 10),
+          fromFase(6, 'r16', 11, 'r16', 12),
+          fromFase(7, 'r16', 13, 'r16', 14),
+          fromFase(8, 'r16', 15, 'r16', 16),
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+];
+
+export function getChaveamentoById(id: string): Chaveamento | undefined {
+  return CHAVEAMENTOS.find((c) => c.id === id);
+}
+
+export type BracketResult = {
+  chaveamento_id: string;
+  fase_id: string;
+  partida_id: number;
+  vencedor: 1 | 2 | null;
+  placar1: number | null;
+  placar2: number | null;
+  status: string;
+};
+
+export function applyResults(chaveamento: Chaveamento, results: BracketResult[]): Chaveamento {
+  // Step 1: apply vencedor + placar to all matches
+  const withResults: BracketFase[] = chaveamento.fases.map((fase) => ({
+    ...fase,
+    partidas: fase.partidas.map((partida) => {
+      const r = results.find((x) => x.fase_id === fase.id && x.partida_id === partida.id);
+      if (!r) return partida;
+      return {
+        ...partida,
+        vencedor: r.vencedor,
+        placar1: r.placar1 ?? null,
+        placar2: r.placar2 ?? null,
+        status: r.status as BracketPartida['status'],
+      };
+    }),
+  }));
+
+  // Step 2: resolve player advancement in phase order
+  const resolved = new Map<string, BracketFase>();
+
+  for (const fase of withResults) {
+    const resolvedPartidas = fase.partidas.map((partida) => {
+      let { jogador1, jogador2 } = partida;
+
+      // Resolve jogador1 from a previous phase winner
+      if (!jogador1 && partida.jogador1FromFase) {
+        const ref = partida.jogador1FromFase;
+        const refFase = resolved.get(ref.faseId);
+        const refMatch = refFase?.partidas.find((p) => p.id === ref.partidaId);
+        if (refMatch?.vencedor) {
+          jogador1 = refMatch.vencedor === 1 ? refMatch.jogador1 : refMatch.jogador2;
+        }
+      }
+
+      // Resolve jogador2 from a previous phase winner (generic or legacy repescagem)
+      if (!jogador2) {
+        if (partida.jogador2FromFase) {
+          const ref = partida.jogador2FromFase;
+          const refFase = resolved.get(ref.faseId);
+          const refMatch = refFase?.partidas.find((p) => p.id === ref.partidaId);
+          if (refMatch?.vencedor) {
+            jogador2 = refMatch.vencedor === 1 ? refMatch.jogador1 : refMatch.jogador2;
+          }
+        } else if (partida.jogador2FromRep) {
+          const repFase = resolved.get('repescagem');
+          const repMatch = repFase?.partidas.find((p) => p.id === partida.jogador2FromRep);
+          if (repMatch?.vencedor) {
+            jogador2 = repMatch.vencedor === 1 ? repMatch.jogador1 : repMatch.jogador2;
+          }
+        }
+      }
+
+      return { ...partida, jogador1, jogador2 };
+    });
+
+    resolved.set(fase.id, { ...fase, partidas: resolvedPartidas });
+  }
+
+  return { ...chaveamento, fases: [...resolved.values()] };
+}

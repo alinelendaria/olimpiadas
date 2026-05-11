@@ -1,0 +1,127 @@
+import type { Delegacao } from '@/types';
+
+export const DELEGACOES: Delegacao[] = [
+  {
+    id: 'australia',
+    nome: 'Austrália',
+    codigo: 'AUS',
+    bandeira: '🇦🇺',
+    flagUrl: 'https://flagcdn.com/w80/au.png',
+    cor: '#00843D',
+    corSecundaria: '#FFCD00',
+    jogadores: ['Leo Lele', 'Raul', 'Sicko', 'Clive', 'Thiago', 'Pedro Zampah', 'ItxBreak', 'Lipi', 'Soft', 'Tico'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'france',
+    nome: 'França',
+    codigo: 'FRA',
+    bandeira: '🇫🇷',
+    flagUrl: 'https://flagcdn.com/w80/fr.png',
+    cor: '#003189',
+    corSecundaria: '#ED2939',
+    jogadores: ['Sue', 'GdtoPuto', 'Choose', 'GK Mão de Dinossauro', 'Wjen', 'Calili', 'Dunga', 'Splat'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'korea',
+    nome: 'Coreia',
+    codigo: 'KOR',
+    bandeira: '🇰🇷',
+    flagUrl: 'https://flagcdn.com/w80/kr.png',
+    cor: '#C60C30',
+    corSecundaria: '#003478',
+    jogadores: ['Zidani', 'Levi', 'Cururu', 'Nemo', 'Hulk Paraíba', 'Deyverson Último Romântico', 'Valenttino', 'Ale', 'Foxtigger'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'japan',
+    nome: 'Japão',
+    codigo: 'JPN',
+    bandeira: '🇯🇵',
+    flagUrl: 'https://flagcdn.com/w80/jp.png',
+    cor: '#BC002D',
+    corSecundaria: '#FFFFFF',
+    jogadores: ['Aline', 'Exausto', 'Ex Rouba Gol', 'Dolas', 'XZ', 'GRG', 'Hasbulla'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'paraguay',
+    nome: 'Paraguai',
+    codigo: 'PAR',
+    bandeira: '🇵🇾',
+    flagUrl: 'https://flagcdn.com/w80/py.png',
+    cor: '#D52B1E',
+    corSecundaria: '#0038A8',
+    jogadores: ['SkyWalker', 'Crise', 'Fedits', 'Kayn', 'Mayer', 'Pedro21', 'Roblox Jr', 'Ferreira'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'mexico',
+    nome: 'México',
+    codigo: 'MEX',
+    bandeira: '🇲🇽',
+    flagUrl: 'https://flagcdn.com/w80/mx.png',
+    cor: '#006847',
+    corSecundaria: '#CE1126',
+    jogadores: ['Jofi', 'Barajas', 'Cbum', 'Pão', 'Almendra', 'Iniciante', 'Bodones', 'Punha Mastodôntica', 'Floatz'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'turkey',
+    nome: 'Turquia',
+    codigo: 'TUR',
+    bandeira: '🇹🇷',
+    flagUrl: 'https://flagcdn.com/w80/tr.png',
+    cor: '#E30A17',
+    corSecundaria: '#FFFFFF',
+    jogadores: ['Romero', 'Brunin', 'Kakalvo', 'Cadeirante', 'Lenin', 'Sirhoi', 'Shirato', 'SPFC Supercampeão', 'Van Persie'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'cuba',
+    nome: 'Cuba',
+    codigo: 'CUB',
+    bandeira: '🇨🇺',
+    flagUrl: 'https://flagcdn.com/w80/cu.png',
+    cor: '#002A8F',
+    corSecundaria: '#CF142B',
+    jogadores: ['Balotelli', 'Pagniez', 'Philipe', 'Cueio', 'Dr. Hannibal Lecter', 'Everton', 'Jetta', 'Fpzin'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+  {
+    id: 'independent',
+    nome: 'Independente',
+    codigo: 'IND',
+    bandeira: '🏴',
+    flagUrl: 'https://flagcdn.com/w80/un.png',
+    cor: '#374151',
+    corSecundaria: '#6B7280',
+    jogadores: ['Haxx', 'Dor', 'Plank', 'Casti'],
+    medalhas: { ouro: 0, prata: 0, bronze: 0 },
+    pontos: 0,
+  },
+];
+
+export function getDelegacaoById(id: string): Delegacao | undefined {
+  return DELEGACOES.find((d) => d.id === id);
+}
+
+export function getAllPlayers(): { nome: string; delegacaoId: string; delegacaoNome: string; bandeira: string }[] {
+  return DELEGACOES.flatMap((d) =>
+    d.jogadores.map((j) => ({
+      nome: j,
+      delegacaoId: d.id,
+      delegacaoNome: d.nome,
+      bandeira: d.bandeira,
+    }))
+  );
+}

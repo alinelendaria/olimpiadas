@@ -1,0 +1,7 @@
+{
+  "/ranking/page": "app/ranking/page.js",
+  "/page": "app/page.js",
+  "/chaveamentos/[id]/page": "app/chaveamentos/[id]/page.js",
+  "/chaveamentos/page": "app/chaveamentos/page.js",
+  "/delegacoes/page": "app/delegacoes/page.js"
+}

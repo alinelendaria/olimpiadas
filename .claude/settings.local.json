@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"c:\\\\Users\\\\vinic\\\\OneDrive\\\\Área de Trabalho\\\\olimpaidas tdj\\\\\")",
+      "Read(//c/Users/vinic/OneDrive/Área de Trabalho/**)"
+    ]
+  }
+}
