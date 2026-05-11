@@ -146,6 +146,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'natacao',
+    nome: 'Natação (Individual)',
+    tipo: 'special',
+    descricao: '4 raias com 8 (top 3 avança) + 2 raias com 6 (top 2 avança) → semifinal → final com 8.',
+    icone: '🏊‍♂️',
+    status: 'em_andamento',
+    formato: 'grupos',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'poker',
     nome: 'Poker (Individual)',
     tipo: 'special',
