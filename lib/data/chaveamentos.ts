@@ -980,5 +980,5 @@ export function applyResults(chaveamento: Chaveamento, results: BracketResult[])
     resolved.set(fase.id, { ...fase, partidas: resolvedPartidas });
   }
 
-  return { ...chaveamento, fases: [...resolved.values()] };
+  return { ...chaveamento, fases: Array.from(resolved.values()) };
 }
