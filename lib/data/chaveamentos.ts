@@ -14,7 +14,7 @@ function fromFase(id: number, faseId1: string, p1: number, faseId2: string, p2: 
 export const CHAVEAMENTOS: Chaveamento[] = [
   {
     id: 'tiro-ao-alvo',
-    nome: 'Tiro ao Alvo',
+    nome: 'Tiro ao Alvo (x1)',
     icone: '🎯',
     status: 'em_andamento',
     totalParticipantes: 48,
@@ -105,7 +105,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'tiro-com-arco',
-    nome: 'Tiro com Arco',
+    nome: 'Tiro com Arco (x1)',
     icone: '🏹',
     status: 'em_andamento',
     totalParticipantes: 48,
@@ -198,7 +198,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'wrestling',
-    nome: 'Wrestling',
+    nome: 'Wrestling (x1)',
     icone: '🤼‍♂️',
     status: 'em_andamento',
     totalParticipantes: 48,
@@ -289,7 +289,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'boxe',
-    nome: 'Boxe',
+    nome: 'Boxe (x1)',
     icone: '🥊',
     status: 'em_andamento',
     totalParticipantes: 48,
@@ -908,7 +908,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'esgrima',
-    nome: 'Esgrima',
+    nome: 'Esgrima (x1)',
     icone: '🤺',
     status: 'em_andamento',
     totalParticipantes: 40,
@@ -991,7 +991,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'badminton',
-    nome: 'Badminton',
+    nome: 'Badminton (x1)',
     icone: '🏸',
     status: 'em_andamento',
     totalParticipantes: 42,
@@ -1076,7 +1076,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
   },
   {
     id: 'judo',
-    nome: 'Judô',
+    nome: 'Judô (x1)',
     icone: '🥋',
     status: 'em_andamento',
     totalParticipantes: 46,
