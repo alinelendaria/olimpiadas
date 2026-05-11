@@ -290,6 +290,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'enormous-ice',
+    nome: 'Enormous Ice (5v5)',
+    tipo: 'x1',
+    descricao: 'Confronto de times de 5 jogadores no Enormous Ice.',
+    icone: '🧊',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 50,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'volei',
     nome: 'Vôlei (Trios)',
     tipo: 'x1',

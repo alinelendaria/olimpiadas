@@ -2090,6 +2090,47 @@ export const CHAVEAMENTOS: Chaveamento[] = [
       },
     ],
   },
+  {
+    id: 'enormous-ice',
+    nome: 'Enormous Ice (5v5)',
+    icone: '🧊',
+    status: 'em_andamento',
+    totalParticipantes: 50,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Sirhoi, SPFC Supercampeão, Lenin, Cadeirante e Van Persie', delegacao: 'tr' }, jogador2: { nome: 'Jofi, Barajas, Almendra, Cbum e Pão',              delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Leo Lele, Raul, Sicko, Zampah e Clive',                    delegacao: 'au' }, jogador2: { nome: 'Romero, Kakalvo, Brunin, Shirato e Fredão',          delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Cueio, Pagniez, Fpzin, Jetta e Aline',          delegacao: 'cu' }, jogador2: { nome: 'GRG, FoxTigger, Zidani, Hulk Paraíba e Nemo',  delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Cururu, Levi, Ale, Valenttino e Exausto',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Wjen, Sue, Splat, Choose e Calili',              delegacao: 'fr' }, jogador2: { nome: 'Balotelli, Philipe, Everton, Dr. Hannibal Lecter e Ex Rouba Gol', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Dolas, Fedits, Punha, Bodones e Kayn',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
 ];
 
 export function getChaveamentoById(id: string): Chaveamento | undefined {
