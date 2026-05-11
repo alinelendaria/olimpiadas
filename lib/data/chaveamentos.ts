@@ -2043,6 +2043,53 @@ export const CHAVEAMENTOS: Chaveamento[] = [
       },
     ],
   },
+  {
+    id: 'volei',
+    nome: 'Vôlei (Trios)',
+    icone: '🏐',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Aline, Exausto e Ex Rouba Gol',              delegacao: 'jp' }, jogador2: { nome: 'GK Mão de Dino, Pedro#21 e Valenttino',  delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Romero, Kakalvo e Lenin',                    delegacao: 'tr' }, jogador2: { nome: 'Clive, Leo Lele e Raul',                  delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Pagniez, Fpzin e Crise',                     delegacao: 'cu' }, jogador2: { nome: 'Jofi, Barajas e Pão',                     delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Calili, Splat e Wjen',                       delegacao: 'fr' }, jogador2: { nome: 'Sirhoi, Cadeirante e Van Persie',         delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Fedits, Kayn e Punha',                       delegacao: 'py' }, jogador2: { nome: 'Balotelli, Philipe e Cueio',              delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Dolas, Xz e GRG',                            delegacao: 'jp' }, jogador2: { nome: 'Sicko, Zampah e ItxBreak',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7, jogador1: { nome: 'Zidani, Levi e Nemo',                        delegacao: 'kr' }, jogador2: { nome: 'Lipi, Mayer e Skywalker',                 delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8, jogador1: { nome: 'Everton, Dr. Hannibal Lecter e Jetta',       delegacao: 'cu' }, jogador2: { nome: 'Choose, Sue e Shirato',                  delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
 ];
 
 export function getChaveamentoById(id: string): Chaveamento | undefined {
