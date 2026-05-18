@@ -2132,6 +2132,82 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'polo-aquatico',
+    nome: 'Polo Aquático (Quartetos)',
+    icone: '🤽',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'grupo-a',
+        nome: 'Grupo A',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Balotelli, Philipe, Cueio e Jetta',          delegacao: 'cu' }, jogador2: { nome: 'Punha, Bodones, Pedro#21 e Fedits',          delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Balotelli, Philipe, Cueio e Jetta',          delegacao: 'cu' }, jogador2: { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',       delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Balotelli, Philipe, Cueio e Jetta',          delegacao: 'cu' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Punha, Bodones, Pedro#21 e Fedits',          delegacao: 'mx' }, jogador2: { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',       delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Punha, Bodones, Pedro#21 e Fedits',          delegacao: 'mx' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',       delegacao: 'jp' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'grupo-b',
+        nome: 'Grupo B',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Jofi, Barajas, Pão e Cbum',                  delegacao: 'mx' }, jogador2: { nome: 'Lenin, Sirhoi, SPFC Supercampeão e Cadeirante', delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Jofi, Barajas, Pão e Cbum',                  delegacao: 'mx' }, jogador2: { nome: 'Nemo, Levi, Valenttino e Ale',                delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Jofi, Barajas, Pão e Cbum',                  delegacao: 'mx' }, jogador2: { nome: 'Wjen, GdToPuto, Sue e Choose',               delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Lenin, Sirhoi, SPFC Supercampeão e Cadeirante', delegacao: 'tr' }, jogador2: { nome: 'Nemo, Levi, Valenttino e Ale',             delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Lenin, Sirhoi, SPFC Supercampeão e Cadeirante', delegacao: 'tr' }, jogador2: { nome: 'Wjen, GdToPuto, Sue e Choose',             delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Nemo, Levi, Valenttino e Ale',               delegacao: 'kr' }, jogador2: { nome: 'Wjen, GdToPuto, Sue e Choose',               delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'grupo-c',
+        nome: 'Grupo C',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Everton, Pagniez, Fpzin e Dr. Hannibal Lecter', delegacao: 'cu' }, jogador2: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',  delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Everton, Pagniez, Fpzin e Dr. Hannibal Lecter', delegacao: 'cu' }, jogador2: { nome: 'Leo Lele, Sicko, Clive e Raul',           delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Everton, Pagniez, Fpzin e Dr. Hannibal Lecter', delegacao: 'cu' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',    delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',      delegacao: 'fr' }, jogador2: { nome: 'Leo Lele, Sicko, Clive e Raul',              delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',      delegacao: 'fr' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Leo Lele, Sicko, Clive e Raul',              delegacao: 'au' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'futsal-quartetos',
     nome: 'Futsal (Quartetos)',
     icone: '🥅',
