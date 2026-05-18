@@ -325,6 +325,18 @@ export const MODALIDADES: Modality[] = [
     participantes: 16,
     maxPorDelegacao: 4,
   },
+  {
+    id: 'dodgeball',
+    nome: 'Dodgeball (Trios)',
+    tipo: 'x1',
+    descricao: 'Confronto de trios de dodgeball. Um trio vs outro trio.',
+    icone: '🔥',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 36,
+    maxPorDelegacao: 6,
+  },
 ];
 
 export function getModalidadeById(id: string): Modality | undefined {
