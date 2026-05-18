@@ -326,6 +326,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 4,
   },
   {
+    id: 'hockey',
+    nome: 'Hockey (Quintetos)',
+    tipo: 'x1',
+    descricao: 'Confronto de equipes de 5 jogadores no hockey. Fase de grupos + semifinal.',
+    icone: '🏒',
+    status: 'em_andamento',
+    formato: 'fase_de_grupos',
+    campeao: null,
+    participantes: 45,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'ironball',
     nome: 'Ironball (Quartetos)',
     tipo: 'x1',
