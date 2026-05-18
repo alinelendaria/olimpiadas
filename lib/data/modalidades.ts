@@ -326,6 +326,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 4,
   },
   {
+    id: 'handebol',
+    nome: 'Handebol (Quartetos)',
+    tipo: 'x1',
+    descricao: 'Confronto de equipes de 4 jogadores no handebol. Fase de grupos + mata-mata.',
+    icone: '🤾‍♂️',
+    status: 'em_andamento',
+    formato: 'fase_de_grupos',
+    campeao: null,
+    participantes: 48,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'futsabao',
     nome: 'Futsabão (Quartetos)',
     tipo: 'x1',
