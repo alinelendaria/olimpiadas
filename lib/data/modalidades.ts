@@ -326,6 +326,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 4,
   },
   {
+    id: 'ironball',
+    nome: 'Ironball (Quartetos)',
+    tipo: 'x1',
+    descricao: 'Confronto de equipes de 4 jogadores no Ironball. Repescagem + mata-mata.',
+    icone: '⛓️',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 48,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'handebol',
     nome: 'Handebol (Quartetos)',
     tipo: 'x1',

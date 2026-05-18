@@ -2132,6 +2132,49 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'ironball',
+    nome: 'Ironball (Quartetos)',
+    icone: '⛓️',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Jetta, Fpzin, Pagniez e Everton',                    delegacao: 'cu' }, jogador2: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',          delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Leo Lele, Raul, Sicko e Clive',                      delegacao: 'au' }, jogador2: { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',           delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Jofi, Barajas, Cbum e Pão',                          delegacao: 'mx' }, jogador2: { nome: 'Choose, Sue, Wjen e GdToPuto',                   delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Nemo, Levi, Valenttino e Ale',                       delegacao: 'kr' }, jogador2: { nome: 'Romero, Shirato, Cadeirante e Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Balotelli, Philipe, Cueio e Dr. Hannibal Lecter',    delegacao: 'cu' }, jogador2: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          fromFase(2, 'repescagem', 2, 'repescagem', 4),
+          fromFase(3, 'repescagem', 1, 'repescagem', 3),
+          { id: 4, jogador1: { nome: 'Kakalvo, SPFC Supercampeão, Sirhoi e Brunin',        delegacao: 'tr' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',                delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'handebol',
     nome: 'Handebol (Quartetos)',
     icone: '🤾‍♂️',
