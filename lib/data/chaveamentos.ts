@@ -2132,6 +2132,100 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'futsabao',
+    nome: 'Futsabão (Quartetos)',
+    icone: '🧼',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'grupo-a',
+        nome: 'Grupo A',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Jofi, Barajas, Cbum, Pão, Bodones e Punha',   delegacao: 'mx' }, jogador2: { nome: 'Romero, Brunin, Sirhoi e SPFC Supercampeão',  delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Jofi, Barajas, Cbum, Pão, Bodones e Punha',   delegacao: 'mx' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',             delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Jofi, Barajas, Cbum, Pão, Bodones e Punha',   delegacao: 'mx' }, jogador2: { nome: 'Balotelli, Dr. Hannibal Lecter, Fpzin e Pagniez', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Romero, Brunin, Sirhoi e SPFC Supercampeão',  delegacao: 'tr' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',             delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Romero, Brunin, Sirhoi e SPFC Supercampeão',  delegacao: 'tr' }, jogador2: { nome: 'Balotelli, Dr. Hannibal Lecter, Fpzin e Pagniez', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Zampah, Thiago, ItxBreak e Soft',             delegacao: 'au' }, jogador2: { nome: 'Balotelli, Dr. Hannibal Lecter, Fpzin e Pagniez', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+        equipes: [
+          { nome: 'Jofi, Barajas, Cbum, Pão, Bodones e Punha',        delegacao: 'mx' },
+          { nome: 'Romero, Brunin, Sirhoi e SPFC Supercampeão',        delegacao: 'tr' },
+          { nome: 'Zampah, Thiago, ItxBreak e Soft',                   delegacao: 'au' },
+          { nome: 'Balotelli, Dr. Hannibal Lecter, Fpzin e Pagniez',   delegacao: 'cu' },
+        ],
+      },
+      {
+        id: 'grupo-b',
+        nome: 'Grupo B',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',    delegacao: 'kr' }, jogador2: { nome: 'Choose, GdToPuto, Sue e Wjen',                delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',    delegacao: 'kr' }, jogador2: { nome: 'Leo Lele, Raul, Sicko e Clive',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',    delegacao: 'kr' }, jogador2: { nome: 'Exausto, Ex Rouba Gol, Aline e Dolas',        delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Choose, GdToPuto, Sue e Wjen',                delegacao: 'fr' }, jogador2: { nome: 'Leo Lele, Raul, Sicko e Clive',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Choose, GdToPuto, Sue e Wjen',                delegacao: 'fr' }, jogador2: { nome: 'Exausto, Ex Rouba Gol, Aline e Dolas',        delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Leo Lele, Raul, Sicko e Clive',               delegacao: 'au' }, jogador2: { nome: 'Exausto, Ex Rouba Gol, Aline e Dolas',        delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+        equipes: [
+          { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',         delegacao: 'kr' },
+          { nome: 'Choose, GdToPuto, Sue e Wjen',                      delegacao: 'fr' },
+          { nome: 'Leo Lele, Raul, Sicko e Clive',                     delegacao: 'au' },
+          { nome: 'Exausto, Ex Rouba Gol, Aline e Dolas',              delegacao: 'jp' },
+        ],
+      },
+      {
+        id: 'grupo-c',
+        nome: 'Grupo C',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Philipe, Cueio, Everton e Jetta',             delegacao: 'cu' }, jogador2: { nome: 'Lenin, Cadeirante, Shirato e Kakalvo',         delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Philipe, Cueio, Everton e Jetta',             delegacao: 'cu' }, jogador2: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',        delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Philipe, Cueio, Everton e Jetta',             delegacao: 'cu' }, jogador2: { nome: 'Nemo, Levi, Valenttino e Ale',                 delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Lenin, Cadeirante, Shirato e Kakalvo',        delegacao: 'tr' }, jogador2: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',        delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Lenin, Cadeirante, Shirato e Kakalvo',        delegacao: 'tr' }, jogador2: { nome: 'Nemo, Levi, Valenttino e Ale',                 delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',      delegacao: 'fr' }, jogador2: { nome: 'Nemo, Levi, Valenttino e Ale',                 delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+        equipes: [
+          { nome: 'Philipe, Cueio, Everton e Jetta',                   delegacao: 'cu' },
+          { nome: 'Lenin, Cadeirante, Shirato e Kakalvo',               delegacao: 'tr' },
+          { nome: 'Calili, GK Mão de Dino, Splat e Dunga',             delegacao: 'fr' },
+          { nome: 'Nemo, Levi, Valenttino e Ale',                      delegacao: 'kr' },
+        ],
+      },
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: null, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'polo-aquatico',
     nome: 'Polo Aquático (Quartetos)',
     icone: '🤽',
