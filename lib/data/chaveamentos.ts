@@ -2132,6 +2132,49 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'dodgeball-quartetos',
+    nome: 'Dodgeball (Quartetos)',
+    icone: '🔥',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Balotelli, Philipe, Dr. Hannibal Lecter e Cueio', delegacao: 'cu' }, jogador2: { nome: 'Calili, Dunga, GK Mão de Dino e Choose', delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Lenin, Cadeirante, Shirato e Kakalvo',             delegacao: 'tr' }, jogador2: { nome: 'Exausto, Ex Rouba Gol, Aline e Dolas',    delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Sue, GdToPuto, Wjen e Splat',                     delegacao: 'fr' }, jogador2: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr', delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Zampah, Thiago, ItxBreak e Soft',                 delegacao: 'au' }, jogador2: { nome: 'Jofi, Barajas, Pão e Cbum',                delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Leo Lele, Raul, Sicko e Clive',                   delegacao: 'au' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Nemo, Levi, Valenttino e Ale',                    delegacao: 'kr' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Romero, Brunin, Sirhoi e SPFC Supercampeão',      delegacao: 'tr' }, jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Pagniez, Everton, Jetta e Fpzin',                 delegacao: 'cu' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'dodgeball',
     nome: 'Dodgeball (Trios)',
     icone: '🔥',

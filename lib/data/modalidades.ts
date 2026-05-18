@@ -326,6 +326,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 4,
   },
   {
+    id: 'dodgeball-quartetos',
+    nome: 'Dodgeball (Quartetos)',
+    tipo: 'x1',
+    descricao: 'Confronto de quartetos no dodgeball. Uma equipe de 4 vs outra.',
+    icone: '🔥',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 48,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'dodgeball',
     nome: 'Dodgeball (Trios)',
     tipo: 'x1',
