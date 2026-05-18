@@ -337,6 +337,18 @@ export const MODALIDADES: Modality[] = [
     participantes: 36,
     maxPorDelegacao: 6,
   },
+  {
+    id: 'basquete-trios',
+    nome: 'Basquete (Trios)',
+    tipo: 'x1',
+    descricao: 'Confronto de trios de basquete. Um trio vs outro trio.',
+    icone: '🏀',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 36,
+    maxPorDelegacao: 6,
+  },
 ];
 
 export function getModalidadeById(id: string): Modality | undefined {
