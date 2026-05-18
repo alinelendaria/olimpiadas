@@ -2150,6 +2150,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 5, jogador1: { nome: 'Punha, Bodones, Pedro#21 e Fedits',          delegacao: 'mx' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',       delegacao: 'jp' }, jogador2: { nome: 'Zampah, Thiago, ItxBreak e Soft',            delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
+        equipes: [
+          { nome: 'Balotelli, Philipe, Cueio e Jetta',   delegacao: 'cu' },
+          { nome: 'Punha, Bodones, Pedro#21 e Fedits',   delegacao: 'mx' },
+          { nome: 'Exausto, Aline, Ex Rouba Gol e Dolas',delegacao: 'jp' },
+          { nome: 'Zampah, Thiago, ItxBreak e Soft',     delegacao: 'au' },
+        ],
       },
       {
         id: 'grupo-b',
@@ -2162,6 +2168,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 5, jogador1: { nome: 'Lenin, Sirhoi, SPFC Supercampeão e Cadeirante', delegacao: 'tr' }, jogador2: { nome: 'Wjen, GdToPuto, Sue e Choose',             delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Nemo, Levi, Valenttino e Ale',               delegacao: 'kr' }, jogador2: { nome: 'Wjen, GdToPuto, Sue e Choose',               delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
+        equipes: [
+          { nome: 'Jofi, Barajas, Pão e Cbum',                        delegacao: 'mx' },
+          { nome: 'Lenin, Sirhoi, SPFC Supercampeão e Cadeirante',     delegacao: 'tr' },
+          { nome: 'Nemo, Levi, Valenttino e Ale',                      delegacao: 'kr' },
+          { nome: 'Wjen, GdToPuto, Sue e Choose',                      delegacao: 'fr' },
+        ],
       },
       {
         id: 'grupo-c',
@@ -2173,6 +2185,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 4, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',      delegacao: 'fr' }, jogador2: { nome: 'Leo Lele, Sicko, Clive e Raul',              delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 5, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',      delegacao: 'fr' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Leo Lele, Sicko, Clive e Raul',              delegacao: 'au' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+        equipes: [
+          { nome: 'Everton, Pagniez, Fpzin e Dr. Hannibal Lecter',     delegacao: 'cu' },
+          { nome: 'Calili, GK Mão de Dino, Splat e Dunga',             delegacao: 'fr' },
+          { nome: 'Leo Lele, Sicko, Clive e Raul',                     delegacao: 'au' },
+          { nome: 'Romero, Brunin, Kakalvo e Van Persie',               delegacao: 'tr' },
         ],
       },
       {
@@ -2226,6 +2244,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 5, jogador1: { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',           delegacao: 'kr' }, jogador2: { nome: 'Jofi, Barajas, Cbum, Pão e Bodones',         delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Balotelli, Philipe, Jetta e Fpzin',                  delegacao: 'cu' }, jogador2: { nome: 'Jofi, Barajas, Cbum, Pão e Bodones',         delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
+        equipes: [
+          { nome: 'Thiago, ItxBreak, Lipi, Soft e Zampah',            delegacao: 'au' },
+          { nome: 'Zidani, Cururu, Hulk Paraíba e Roblox Jr',         delegacao: 'kr' },
+          { nome: 'Balotelli, Philipe, Jetta e Fpzin',                 delegacao: 'cu' },
+          { nome: 'Jofi, Barajas, Cbum, Pão e Bodones',               delegacao: 'mx' },
+        ],
       },
       {
         id: 'grupo-b',
@@ -2238,6 +2262,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 5, jogador1: { nome: 'Choose, GdToPuto, Sue e Wjen',                       delegacao: 'fr' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Exausto, Aline, Ex Rouba Gol, Dolas e Xz',          delegacao: 'jp' }, jogador2: { nome: 'Romero, Brunin, Kakalvo e Van Persie',        delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
+        equipes: [
+          { nome: 'Nemo, Valenttino, Ale e Levi',                      delegacao: 'kr' },
+          { nome: 'Choose, GdToPuto, Sue e Wjen',                      delegacao: 'fr' },
+          { nome: 'Exausto, Aline, Ex Rouba Gol, Dolas e Xz',         delegacao: 'jp' },
+          { nome: 'Romero, Brunin, Kakalvo e Van Persie',               delegacao: 'tr' },
+        ],
       },
       {
         id: 'grupo-c',
@@ -2249,6 +2279,12 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 4, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',              delegacao: 'fr' }, jogador2: { nome: 'Leo Lele, Raul, Sicko e Clive',               delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 5, jogador1: { nome: 'Calili, GK Mão de Dino, Splat e Dunga',              delegacao: 'fr' }, jogador2: { nome: 'Cadeirante, Sirhoi, Shirato, Lenin e SPFC Supercampeão', delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Leo Lele, Raul, Sicko e Clive',                      delegacao: 'au' }, jogador2: { nome: 'Cadeirante, Sirhoi, Shirato, Lenin e SPFC Supercampeão', delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+        equipes: [
+          { nome: 'Everton, Cueio, Pagniez, Dr. Hannibal Lecter e Crise', delegacao: 'cu' },
+          { nome: 'Calili, GK Mão de Dino, Splat e Dunga',             delegacao: 'fr' },
+          { nome: 'Leo Lele, Raul, Sicko e Clive',                     delegacao: 'au' },
+          { nome: 'Cadeirante, Sirhoi, Shirato, Lenin e SPFC Supercampeão', delegacao: 'tr' },
         ],
       },
       {

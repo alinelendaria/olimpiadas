@@ -187,6 +187,7 @@ export interface BracketFase {
   id: string;
   nome: string;
   partidas: BracketPartida[];
+  equipes?: Array<{ nome: string; delegacao: string }>;
 }
 
 export interface Chaveamento {

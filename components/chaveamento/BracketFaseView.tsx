@@ -1,5 +1,6 @@
 import type { BracketFase } from '@/types';
 import MatchupCard from './MatchupCard';
+import GrupoStandingsTable from './GrupoStandingsTable';
 
 interface Props {
   fase: BracketFase;
@@ -19,6 +20,8 @@ export default function BracketFaseView({ fase }: Props) {
           {done}/{total} concluídos
         </span>
       </div>
+
+      {fase.equipes && <GrupoStandingsTable fase={fase} />}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {fase.partidas.map((partida) => (
