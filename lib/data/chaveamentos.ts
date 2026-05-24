@@ -3295,6 +3295,49 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'dodgeball-trios',
+    nome: 'Dodgeball (Trios)',
+    icone: '🔥',
+    status: 'em_andamento',
+    totalParticipantes: 36,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Cueio, Fpzin e Jetta',                      delegacao: 'cu' },                     jogador2: { nome: 'Jofi, Barajas e Pão',                delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Romero, Brunin e Raul',                      delegacao: 'tr', delegacao2: 'au' },   jogador2: { nome: 'Ex Rouba Gol, Aline e Exausto',      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Balotelli, Pagniez e Dr. Hannibal Lecter',   delegacao: 'cu' },                     jogador2: { nome: 'Calili, Wjen e Sue',                  delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Sirhoi, SPFC Supercampeão e Van Persie',     delegacao: 'tr' },                     jogador2: { nome: 'Sicko, Zampah e ItxBreak',           delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Dolas, Punha e Bodones',              delegacao: 'jp', delegacao2: 'mx' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Shirato, GK Mão de Dino e Choose',    delegacao: 'tr', delegacao2: 'fr' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Zidani, Levi e Nemo',                 delegacao: 'kr' },                   jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Everton, Philipe e Kakalvo',          delegacao: 'cu', delegacao2: 'tr' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'volei-trios',
     nome: 'Vôlei (Trios)',
     icone: '🏐',
