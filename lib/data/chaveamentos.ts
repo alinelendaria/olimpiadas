@@ -2151,10 +2151,10 @@ export const CHAVEAMENTOS: Chaveamento[] = [
         id: 'quartas',
         nome: 'Quartas de Final',
         partidas: [
-          { id: 1, jogador1: { nome: 'Cueio, Pagniez, Fpzin, Jetta e Aline',          delegacao: 'cu' }, jogador2: { nome: 'GRG, FoxTigger, Zidani, Hulk Paraíba e Nemo',  delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'Cururu, Levi, Ale, Valenttino e Exausto',        delegacao: 'kr' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Wjen, Sue, Splat, Choose e Calili',              delegacao: 'fr' }, jogador2: { nome: 'Balotelli, Philipe, Everton, Dr. Hannibal Lecter e Ex Rouba Gol', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Dolas, Fedits, Punha, Bodones e Kayn',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 1, jogador1: { nome: 'Cueio, Pagniez, Fpzin, Jetta e Aline',          delegacao: 'cu', delegacao2: 'jp' }, jogador2: { nome: 'GRG, FoxTigger, Zidani, Hulk Paraíba e Nemo',  delegacao: 'kr', delegacao2: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Cururu, Levi, Ale, Valenttino e Exausto',        delegacao: 'kr', delegacao2: 'jp' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Wjen, Sue, Splat, Choose e Calili',              delegacao: 'fr' },                   jogador2: { nome: 'Balotelli, Philipe, Everton, Dr. Hannibal Lecter e Ex Rouba Gol', delegacao: 'cu', delegacao2: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Dolas, Fedits, Punha, Bodones e Kayn',           delegacao: 'jp', delegacao2: 'py', delegacao3: 'mx' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
       },
       {

@@ -351,8 +351,8 @@ export const MODALIDADES: Modality[] = [
   },
   {
     id: 'enormous-ice',
-    nome: 'Enormous Ice (5v5)',
-    tipo: 'x1',
+    nome: 'Enormous Ice (Quintetos)',
+    tipo: 'x5',
     descricao: 'Confronto de times de 5 jogadores no Enormous Ice.',
     icone: '🧊',
     status: 'em_andamento',
