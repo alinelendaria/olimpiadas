@@ -482,6 +482,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'volei-de-praia',
+    nome: 'Vôlei de Praia (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas no vôlei de praia. Uma dupla vs outra dupla.',
+    icone: '🏖️',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 40,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'artilheiro-duplas',
     nome: 'Artilheiro (Duplas)',
     tipo: 'x2',
