@@ -2790,49 +2790,6 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
-    id: 'basquete-trios',
-    nome: 'Basquete (Trios)',
-    icone: '🏀',
-    status: 'em_andamento',
-    totalParticipantes: 36,
-    campeao: null,
-    fases: [
-      {
-        id: 'repescagem',
-        nome: 'Repescagem',
-        partidas: [
-          { id: 1, jogador1: { nome: 'Fpzin, Jetta e Everton',                   delegacao: 'cu' }, jogador2: { nome: 'ItxBreak, Zampah e Sicko',         delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'Crise, Cueio e Philipe',                   delegacao: 'cu' }, jogador2: { nome: 'Wjen, Choose e Pedro#21',           delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Romero, Sirhoi e SPFC Supercampeão',       delegacao: 'tr' }, jogador2: { nome: 'Calili, Splat e Dunga',             delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Lenin, Shirato e Kakalvo',                 delegacao: 'tr' }, jogador2: { nome: 'Jofi, Barajas e Pão',               delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-        ],
-      },
-      {
-        id: 'quartas',
-        nome: 'Quartas de Final',
-        partidas: [
-          { id: 1, jogador1: { nome: 'Nemo, Levi e Hulk Paraíba',               delegacao: 'kr' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'Leo Lele, Raul e Clive',                  delegacao: 'au' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Balotelli, Dr. Hannibal Lecter e Pagniez',delegacao: 'cu' }, jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Ex Rouba Gol, Aline e Exausto',           delegacao: 'jp' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-        ],
-      },
-      {
-        id: 'semifinal',
-        nome: 'Semifinal',
-        partidas: [
-          fromFase(1, 'quartas', 1, 'quartas', 2),
-          fromFase(2, 'quartas', 3, 'quartas', 4),
-        ],
-      },
-      {
-        id: 'final',
-        nome: 'Final',
-        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
-      },
-    ],
-  },
-  {
     id: 'volei-de-praia',
     nome: 'Vôlei de Praia (Duplas)',
     icone: '🏖️',
@@ -3267,6 +3224,53 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 6, jogador1: { nome: 'Sicko e Zampah',           delegacao: 'au' }, jogador2: null, jogador2FromRep: 6, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 7, jogador1: { nome: 'Raul e Leo Lele',          delegacao: 'au' }, jogador2: { nome: 'Ex Rouba Gol e Clive', delegacao: 'jp', delegacao2: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 8, jogador1: { nome: 'Kakalvo e SPFC Supercampeão', delegacao: 'tr' }, jogador2: { nome: 'Nemo e Valenttino', delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
+    id: '6man',
+    nome: '6MAN (Trios)',
+    icone: '6️⃣',
+    status: 'em_andamento',
+    totalParticipantes: 48,
+    campeao: null,
+    fases: [
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Splat, Choose e GK Mão de Dino',          delegacao: 'fr' },                   jogador2: { nome: 'Kakalvo, Sirhoi e Van Persie',         delegacao: 'tr' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Jofi, Barajas e Pão',                     delegacao: 'mx' },                   jogador2: { nome: 'Dolas, GRG e Xz',                      delegacao: 'jp' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Wjen, Calili e Pedro#21',                 delegacao: 'fr', delegacao2: 'py' }, jogador2: { nome: 'Romero, SPFC Supercampeão e Zidani',   delegacao: 'tr', delegacao2: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Balotelli, Dr. Hannibal Lecter e Crise',  delegacao: 'cu', delegacao2: 'py' }, jogador2: { nome: 'Bodones, Punha e Mayer',               delegacao: 'mx', delegacao2: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'Philipe, Everton e Jetta',                delegacao: 'cu' },                   jogador2: { nome: 'Fedits, Kayn e Skywalker',             delegacao: 'py' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Sicko, ItxBreak e Zampah',                delegacao: 'au' },                   jogador2: { nome: 'Dunga, GdToPuto e Sue',                delegacao: 'fr' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7, jogador1: { nome: 'Leo Lele, Clive e Raul',                  delegacao: 'au' },                   jogador2: { nome: 'Fpzin, Cueio e Pagniez',               delegacao: 'cu' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8, jogador1: { nome: 'Nemo, Valenttino e Levi',                 delegacao: 'kr' },                   jogador2: { nome: 'Ex Rouba Gol, Aline e Exausto',        delegacao: 'jp' },                   vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
       },
       {
