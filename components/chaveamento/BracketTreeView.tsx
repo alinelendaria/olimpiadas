@@ -99,8 +99,68 @@ function TreeCard({ partida }: { partida: BracketPartida }) {
   );
 }
 
+// ── Mesa / Raia card (group-format phases: poker, natação…) ───
+function MesaCard({ fase }: { fase: BracketFase }) {
+  const equipes = fase.equipes ?? [];
+
+  return (
+    <div
+      className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm shrink-0"
+      style={{ width: CARD_W }}
+    >
+      {/* header */}
+      <div className="bg-gray-50 border-b border-gray-100 px-2 py-1.5 text-center">
+        <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide truncate block">
+          {fase.nome}
+        </span>
+      </div>
+
+      {equipes.length === 0 ? (
+        /* placeholder for final/semi not yet decided */
+        <div className="flex items-center justify-center py-5 px-3">
+          <span className="text-[11px] text-gray-300 italic text-center">A definir</span>
+        </div>
+      ) : (
+        equipes.map((eq, i) => (
+          <div
+            key={eq.nome}
+            className="flex items-center gap-1.5 px-2 py-[5px] border-b border-gray-50 last:border-0"
+          >
+            <span className="text-[9px] font-mono text-gray-300 w-4 shrink-0">{i + 1}</span>
+            <Image
+              src={`https://flagcdn.com/w40/${eq.delegacao}.png`}
+              alt={eq.delegacao}
+              width={14} height={10}
+              unoptimized
+              className="shrink-0"
+            />
+            <span className="text-[11px] text-gray-800 truncate flex-1">{eq.nome}</span>
+          </div>
+        ))
+      )}
+    </div>
+  );
+}
+
 // ── Main component ────────────────────────────────────────────
 export default function BracketTreeView({ fases }: { fases: BracketFase[] }) {
+  const bracketPhases = fases.filter(f => f.partidas.length > 0 && !f.equipes);
+  const equipePhases  = fases.filter(f => f.equipes !== undefined);
+
+  // ── Group/mesa format (poker, natação, etc.) ──
+  if (bracketPhases.length === 0 && equipePhases.length > 0) {
+    return (
+      <div className="overflow-x-auto pb-6 -mx-4 px-4">
+        <div className="flex items-start gap-[44px]">
+          {equipePhases.map(fase => (
+            <MesaCard key={fase.id} fase={fase} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ── Standard bracket ──
   // skip group-stage phases (have equipes) and empty phases
   const phases = fases.filter(f => f.partidas.length > 0 && !f.equipes);
 

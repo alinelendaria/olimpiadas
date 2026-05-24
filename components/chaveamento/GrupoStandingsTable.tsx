@@ -82,7 +82,7 @@ export default function GrupoStandingsTable({ fase }: { fase: BracketFase }) {
     .map((s) => ({ ...s, sg: s.gp - s.gc, pts: s.v * 3 + s.e }))
     .sort((a, b) => b.pts - a.pts || b.sg - a.sg || b.gp - a.gp);
 
-  const ADVANCE = 2;
+  const ADVANCE = fase.advanceCount ?? 2;
 
   return (
     <div className="mb-5 overflow-x-auto rounded-lg border border-gray-100 shadow-card">
