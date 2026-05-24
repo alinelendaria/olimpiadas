@@ -69,7 +69,7 @@ export default function ChaveamentosPage() {
               </div>
               <p className="text-sm text-gray-500">
                 {chaveamento.totalParticipantes} participantes ·{' '}
-                {chaveamento.fases.filter((f) => f.partidas.length > 0).length} fases
+                {chaveamento.fases.filter((f) => f.partidas.length > 0 || (f.equipes && f.equipes.length > 0)).length} fases
                 {chaveamento.campeao && (
                   <> · <span className="text-amber-600 font-medium">🏆 {chaveamento.campeao}</span></>
                 )}
