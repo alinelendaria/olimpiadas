@@ -3295,6 +3295,49 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'basquete-trios',
+    nome: 'Basquete (Trios)',
+    icone: '🏀',
+    status: 'em_andamento',
+    totalParticipantes: 36,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Fpzin, Jetta e Everton',              delegacao: 'cu' },                   jogador2: { nome: 'ItxBreak, Zampah e Sicko',          delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Crise, Cueio e Philipe',              delegacao: 'py', delegacao2: 'cu' }, jogador2: { nome: 'Wjen, Choose e Pedro#21',            delegacao: 'fr', delegacao2: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Romero, Sirhoi e SPFC Supercampeão',  delegacao: 'tr' },                   jogador2: { nome: 'Calili, Splat e Dunga',              delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Lenin, Shirato e Kakalvo',            delegacao: 'tr' },                   jogador2: { nome: 'Jofi, Barajas e Pão',                delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Nemo, Levi e Hulk Paraíba',              delegacao: 'kr' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Leo Lele, Raul e Clive',                 delegacao: 'au' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Balotelli, Dr. Hannibal Lecter e Pagniez', delegacao: 'cu' }, jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Ex Rouba Gol, Aline e Exausto',          delegacao: 'jp' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'dodgeball-trios',
     nome: 'Dodgeball (Trios)',
     icone: '🔥',

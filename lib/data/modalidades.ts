@@ -518,6 +518,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'basquete-trios',
+    nome: 'Basquete (Trios)',
+    tipo: 'x3',
+    descricao: 'Confronto de trios de basquete. Um trio vs outro trio.',
+    icone: '🏀',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 36,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'dodgeball-trios',
     nome: 'Dodgeball (Trios)',
     tipo: 'x3',
