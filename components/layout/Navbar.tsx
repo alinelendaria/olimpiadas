@@ -8,6 +8,7 @@ import { Menu, X, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
+import BetProfileModal from '@/components/bet/BetProfileModal';
 
 const NAV_LINKS = [
   { href: '/',               label: 'Home' },
@@ -16,6 +17,7 @@ const NAV_LINKS = [
   { href: '/medalhas',       label: 'Medalhas' },
   { href: '/ranking',        label: 'Ranking' },
   { href: '/ao-vivo',        label: 'Ao Vivo', isLive: true },
+  { href: '/bet',            label: '🪙 BET' },
 ];
 
 const DiscordIcon = () => (
@@ -25,9 +27,10 @@ const DiscordIcon = () => (
 );
 
 export default function Navbar() {
-  const [isOpen, setIsOpen]     = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [user, setUser]         = useState<User | null>(null);
+  const [isOpen, setIsOpen]           = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [user, setUser]               = useState<User | null>(null);
+  const [showBetModal, setShowBetModal] = useState(false);
   const pathname = usePathname();
   const supabase = createClient();
 
@@ -106,13 +109,23 @@ export default function Navbar() {
           </Link>
 
           {/* Login / Avatar */}
-          <div className="ml-2">
+          <div className="ml-2 relative">
             {user ? (
               <div className="flex items-center gap-2">
-                {avatar && (
-                  <img src={avatar} alt={username} className="w-7 h-7 rounded-full border border-gray-200" />
-                )}
-                <span className="text-sm text-gray-700 font-medium max-w-[100px] truncate">{username}</span>
+                <button
+                  onClick={() => setShowBetModal(v => !v)}
+                  title="Perfil BET"
+                  className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-gray-50 transition-colors"
+                >
+                  {avatar ? (
+                    <img src={avatar} alt={username} className="w-7 h-7 rounded-full border border-gray-200" />
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-accent-light flex items-center justify-center text-xs font-bold text-accent">
+                      {username.charAt(0)}
+                    </div>
+                  )}
+                  <span className="text-sm text-gray-700 font-medium max-w-[100px] truncate hidden lg:block">{username}</span>
+                </button>
                 <button
                   onClick={handleLogout}
                   title="Sair"
@@ -129,6 +142,9 @@ export default function Navbar() {
                 <DiscordIcon />
                 Entrar
               </button>
+            )}
+            {showBetModal && (
+              <BetProfileModal onClose={() => setShowBetModal(false)} />
             )}
           </div>
         </div>

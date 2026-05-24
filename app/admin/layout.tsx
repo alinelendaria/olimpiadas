@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Shield, BarChart2, Trophy, Users, Lock, GitBranch, LogOut } from 'lucide-react';
+import { Shield, BarChart2, Trophy, Users, Lock, GitBranch, LogOut, CircleDollarSign } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { createClient } from '@/lib/supabase/client';
 
@@ -12,6 +12,7 @@ const ADMIN_LINKS = [
   { href: '/admin/chaveamentos', label: 'Chaveamentos', icon: GitBranch },
   { href: '/admin/medalhas',     label: 'Medalhas',     icon: Trophy },
   { href: '/admin/jogadores',    label: 'Jogadores',    icon: Users },
+  { href: '/admin/bet',          label: 'BET 🪙',       icon: CircleDollarSign },
 ];
 
 const ADMIN_DISCORD_ID = '409098047344345088';
