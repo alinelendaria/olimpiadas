@@ -390,7 +390,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
         id: 'repescagem',
         nome: 'Repescagem',
         partidas: [
-          { id: 1,  jogador1: { nome: 'Deyverson Romântico',  delegacao: 'kr' }, jogador2: { nome: 'Iniciante',  delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 1,  jogador1: { nome: 'Valenttino',            delegacao: 'kr' }, jogador2: { nome: 'Iniciante',  delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 2,  jogador1: { nome: 'Clive',                delegacao: 'au' }, jogador2: { nome: 'Choose',     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 3,  jogador1: { nome: 'Zampah',               delegacao: 'au' }, jogador2: { nome: 'Punha',      delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 4,  jogador1: { nome: 'Dolas',                delegacao: 'jp' }, jogador2: { nome: 'Ferreira',   delegacao: 'py' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
