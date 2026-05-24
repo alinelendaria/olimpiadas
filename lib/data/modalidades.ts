@@ -482,6 +482,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'dodgeball-duplas',
+    nome: 'Dodgeball (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de dodgeball. Uma dupla vs outra dupla.',
+    icone: '🔥',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 40,
+    maxPorDelegacao: 6,
+  },
+  {
     id: '6man',
     nome: '6MAN (Trios)',
     tipo: 'x1',

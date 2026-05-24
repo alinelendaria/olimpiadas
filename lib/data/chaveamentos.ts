@@ -2833,6 +2833,63 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'dodgeball-duplas',
+    nome: 'Dodgeball (Duplas)',
+    icone: '🔥',
+    status: 'em_andamento',
+    totalParticipantes: 40,
+    campeao: null,
+    fases: [
+      {
+        id: 'repescagem',
+        nome: 'Repescagem',
+        partidas: [
+          { id: 1, jogador1: { nome: 'SPFC Supercampeão e Shirato',   delegacao: 'tr' }, jogador2: { nome: 'Kakalvo e Sue', delegacao: 'tr', delegacao2: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Wjen e Splat',                  delegacao: 'fr' }, jogador2: { nome: 'Sicko e Zampah',                  delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Leo Lele e Raul',               delegacao: 'au' }, jogador2: { nome: 'Exausto e Aline',                 delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Lipi e ItxBreak',               delegacao: 'au' }, jogador2: { nome: 'Xz e Dolas',                      delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'oitavas',
+        nome: 'Oitavas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Fpzin e Philipe',                    delegacao: 'cu' }, jogador2: null, jogador2FromRep: 1, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Romero e Brunin',                    delegacao: 'tr' }, jogador2: { nome: 'Jofi e Pão',                   delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Sirhoi e Levi', delegacao: 'tr', delegacao2: 'kr' }, jogador2: null, jogador2FromRep: 2, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Balotelli e Cueio',                  delegacao: 'cu' }, jogador2: { nome: 'Calili e Dunga',               delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 5, jogador1: { nome: 'GK Mão de Dino e Choose',            delegacao: 'fr' }, jogador2: null, jogador2FromRep: 3, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 6, jogador1: { nome: 'Ex Rouba Gol e Clive', delegacao: 'jp', delegacao2: 'au' }, jogador2: { nome: 'Iniciante e Barajas', delegacao: 'mx' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7, jogador1: { nome: 'Pagniez e Dr. Hannibal Lecter',      delegacao: 'cu' }, jogador2: null, jogador2FromRep: 4, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 8, jogador1: { nome: 'Everton e Jetta',                    delegacao: 'cu' }, jogador2: { nome: 'Zidani e Nemo',                delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          fromFase(1, 'oitavas', 1, 'oitavas', 2),
+          fromFase(2, 'oitavas', 3, 'oitavas', 4),
+          fromFase(3, 'oitavas', 5, 'oitavas', 6),
+          fromFase(4, 'oitavas', 7, 'oitavas', 8),
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'badminton-duplas',
     nome: 'Badminton (Duplas)',
     icone: '🏸',
