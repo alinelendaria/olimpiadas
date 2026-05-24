@@ -14,6 +14,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'tiro-ao-alvo-duplas',
+    nome: 'Tiro ao Alvo (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de tiro ao alvo. Uma dupla vs outra dupla.',
+    icone: '🎯',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'tiro-com-arco',
     nome: 'Tiro com Arco (x1)',
     tipo: 'x1',
