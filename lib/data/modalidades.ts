@@ -518,6 +518,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'volei-trios',
+    nome: 'Vôlei (Trios)',
+    tipo: 'x3',
+    descricao: 'Confronto de trios no vôlei. Um trio vs outro trio.',
+    icone: '🏐',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 48,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'truco-duplas',
     nome: 'Truco (Duplas)',
     tipo: 'x2',

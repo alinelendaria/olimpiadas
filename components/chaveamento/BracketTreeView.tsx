@@ -47,6 +47,14 @@ function PlayerRow({
                 unoptimized
               />
             )}
+            {jogador.delegacao3 && (
+              <Image
+                src={`https://flagcdn.com/w40/${jogador.delegacao3}.png`}
+                alt={jogador.delegacao3}
+                width={14} height={10}
+                unoptimized
+              />
+            )}
           </div>
           <span className={cn('text-[11px] truncate flex-1', isWinner ? 'font-semibold text-green-700' : 'text-gray-800')}>
             {jogador.nome}

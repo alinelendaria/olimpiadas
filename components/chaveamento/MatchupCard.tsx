@@ -52,6 +52,16 @@ function PlayerSlot({
             className="flag-img"
           />
         )}
+        {jogador.delegacao3 && (
+          <Image
+            src={`https://flagcdn.com/w40/${jogador.delegacao3}.png`}
+            alt={jogador.delegacao3}
+            width={20}
+            height={14}
+            unoptimized
+            className="flag-img"
+          />
+        )}
       </div>
       <span className={cn('text-sm truncate', isWinner ? 'text-green-700' : 'text-gray-800')}>
         {jogador.nome}
