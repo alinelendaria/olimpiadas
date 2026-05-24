@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DELEGACOES } from '@/lib/data/delegacoes';
+import { MODALIDADES } from '@/lib/data/modalidades';
 
 const featured = DELEGACOES.slice(0, 6);
 
@@ -29,7 +30,7 @@ export default function HeroBanner() {
             </h1>
 
             <p className="text-gray-500 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
-              9 delegações, 7 modalidades e dezenas de atletas disputando a glória olímpica no Haxball.
+              9 delegações, {MODALIDADES.length} modalidades e dezenas de atletas disputando a glória olímpica no Haxball.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
@@ -59,7 +60,7 @@ export default function HeroBanner() {
               {[
                 { value: '9',   label: 'Delegações' },
                 { value: '70+', label: 'Atletas' },
-                { value: '7',   label: 'Modalidades' },
+                { value: String(MODALIDADES.length), label: 'Modalidades' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-2xl font-bold text-gray-900">{s.value}</div>
