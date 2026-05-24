@@ -242,6 +242,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 5,
   },
   {
+    id: 'badminton-duplas',
+    nome: 'Badminton (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de badminton. Uma dupla vs outra dupla.',
+    icone: '🏸',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 36,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'jogo-das-cadeiras',
     nome: 'Jogo das Cadeiras (Individual)',
     tipo: 'special',
