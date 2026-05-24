@@ -14,9 +14,12 @@ export default function ChaveamentoPageClient({ fases }: { fases: BracketFase[] 
 
   const fasesAtivas = fases.filter(f => f.partidas.length > 0 || (f.equipes && f.equipes.length > 0));
 
+  // Tree view only makes sense for bracket-style phases (partidas, no equipes)
+  const hasBracket = fases.some(f => f.partidas.length > 0 && !f.equipes);
+
   return (
     <>
-      {/* View toggle */}
+      {/* View toggle — only show tree option when there is a bracket */}
       {fasesAtivas.length > 0 && (
         <div className="flex items-center gap-2 mb-8">
           <button
@@ -32,18 +35,20 @@ export default function ChaveamentoPageClient({ fases }: { fases: BracketFase[] 
             Lista
           </button>
 
-          <button
-            onClick={() => setView('tree')}
-            className={cn(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border',
-              view === 'tree'
-                ? 'bg-accent-light text-accent border-accent/20'
-                : 'text-gray-500 border-gray-200 hover:bg-gray-50'
-            )}
-          >
-            <GitBranch className="w-4 h-4" />
-            Chaveamento
-          </button>
+          {hasBracket && (
+            <button
+              onClick={() => setView('tree')}
+              className={cn(
+                'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border',
+                view === 'tree'
+                  ? 'bg-accent-light text-accent border-accent/20'
+                  : 'text-gray-500 border-gray-200 hover:bg-gray-50'
+              )}
+            >
+              <GitBranch className="w-4 h-4" />
+              Chaveamento
+            </button>
+          )}
         </div>
       )}
 
