@@ -448,7 +448,7 @@ export const MODALIDADES: Modality[] = [
   {
     id: 'futsal-quartetos',
     nome: 'Futsal (Quartetos)',
-    tipo: 'x1',
+    tipo: 'x4',
     descricao: 'Confronto de equipes de 4 jogadores no futsal. Fase de grupos + mata-mata.',
     icone: '🥅',
     status: 'em_andamento',
