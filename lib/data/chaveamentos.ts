@@ -1645,7 +1645,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     nome: 'Poker (Individual)',
     icone: '♠️',
     status: 'em_andamento',
-    totalParticipantes: 18,
+    totalParticipantes: 17,
     campeao: null,
     fases: [
       {
