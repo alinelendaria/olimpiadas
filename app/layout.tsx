@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Olimpíadas TDJ',
-  description: 'Portal oficial das Olimpíadas TDJ Haxball — 9 delegações, 7 modalidades.',
+  description: 'Portal oficial das Olimpíadas TDJ Haxball — 9 delegações, 53 modalidades.',
   openGraph: {
     title: 'Olimpíadas TDJ',
     description: 'Portal oficial das Olimpíadas TDJ Haxball',

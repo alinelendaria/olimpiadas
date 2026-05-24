@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { Search } from 'lucide-react';
 import { DELEGACOES } from '@/lib/data/delegacoes';
+import { MODALIDADES } from '@/lib/data/modalidades';
 import DelegationCard from '@/components/delegacoes/DelegationCard';
 
 type FilterType = 'all' | 'most-players' | 'alpha';
@@ -45,7 +46,7 @@ export default function DelegacoesPage() {
           {[
             { value: DELEGACOES.length, label: 'Delegações' },
             { value: totalPlayers,       label: 'Atletas' },
-            { value: 7,                  label: 'Modalidades' },
+            { value: MODALIDADES.length, label: 'Modalidades' },
             { value: 0,                  label: 'Medalhas Dist.' },
           ].map((s) => (
             <div key={s.label} className="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-card">

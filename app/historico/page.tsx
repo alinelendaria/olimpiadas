@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { DELEGACOES } from '@/lib/data/delegacoes';
+import { MODALIDADES } from '@/lib/data/modalidades';
 
 const TIMELINE = [
   { date: 'Maio 2026',   icon: '📢', title: 'Anúncio das Olimpíadas TDJ',    desc: 'A ideia de criar um evento olímpico para a comunidade TDJ Haxball foi anunciada. A empolgação foi imediata.' },
@@ -25,7 +26,7 @@ export default function HistoricoPage() {
           <div>
             <p className="text-lg font-bold text-amber-900">3ª Edição — Olimpíadas TDJ Haxball</p>
             <p className="text-sm text-amber-700 mt-0.5">
-              {DELEGACOES.length} delegações · {totalPlayers} atletas · 7 modalidades · 2026
+              {DELEGACOES.length} delegações · {totalPlayers} atletas · {MODALIDADES.length} modalidades · 2026
             </p>
           </div>
         </div>
@@ -36,7 +37,7 @@ export default function HistoricoPage() {
           um evento histórico para a comunidade, reunindo{' '}
           <strong className="text-gray-900">{DELEGACOES.length} delegações</strong>,{' '}
           <strong className="text-gray-900">{totalPlayers} atletas</strong> e{' '}
-          <strong className="text-gray-900">7 modalidades</strong> únicas.
+          <strong className="text-gray-900">{MODALIDADES.length} modalidades</strong> únicas.
           Mais história será feita aqui conforme o torneio avança.
         </div>
 

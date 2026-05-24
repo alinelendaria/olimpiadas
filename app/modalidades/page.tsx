@@ -11,7 +11,7 @@ export default function ModalidadesPage() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Modalidades</h1>
-          <p className="text-gray-500 mt-1">7 modalidades compõem as Olimpíadas TDJ Haxball</p>
+          <p className="text-gray-500 mt-1">{MODALIDADES.length} modalidades compõem as Olimpíadas TDJ Haxball</p>
         </div>
 
         {/* Summary */}
