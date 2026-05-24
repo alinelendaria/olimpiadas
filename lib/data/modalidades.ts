@@ -518,6 +518,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'head-soccer-duplas',
+    nome: 'Head Soccer (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas no Head Soccer. Uma dupla vs outra dupla.',
+    icone: '💥',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 40,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'boliche-duplas',
     nome: 'Boliche (Duplas)',
     tipo: 'x2',
