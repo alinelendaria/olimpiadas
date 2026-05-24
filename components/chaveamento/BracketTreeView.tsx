@@ -159,6 +159,14 @@ function MesaCard({ fase }: { fase: BracketFase }) {
                   unoptimized
                 />
               )}
+              {eq.delegacao3 && (
+                <Image
+                  src={`https://flagcdn.com/w40/${eq.delegacao3}.png`}
+                  alt={eq.delegacao3}
+                  width={14} height={10}
+                  unoptimized
+                />
+              )}
             </div>
             <span className="text-[11px] text-gray-800 truncate flex-1">{eq.nome}</span>
           </div>

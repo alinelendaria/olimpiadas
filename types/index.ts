@@ -189,7 +189,7 @@ export interface BracketFase {
   id: string;
   nome: string;
   partidas: BracketPartida[];
-  equipes?: Array<{ nome: string; delegacao: string; delegacao2?: string }>;
+  equipes?: Array<{ nome: string; delegacao: string; delegacao2?: string; delegacao3?: string }>;
   advanceCount?: number; // how many participants advance from this phase (default 2)
 }
 

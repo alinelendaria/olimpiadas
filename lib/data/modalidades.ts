@@ -388,7 +388,7 @@ export const MODALIDADES: Modality[] = [
   {
     id: 'hockey',
     nome: 'Hockey (Quintetos)',
-    tipo: 'x1',
+    tipo: 'x5',
     descricao: 'Confronto de equipes de 5 jogadores no hockey. Fase de grupos + semifinal.',
     icone: '🏒',
     status: 'em_andamento',
