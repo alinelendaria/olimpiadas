@@ -400,7 +400,7 @@ export const MODALIDADES: Modality[] = [
   {
     id: 'ironball',
     nome: 'Ironball (Quartetos)',
-    tipo: 'x1',
+    tipo: 'x4',
     descricao: 'Confronto de equipes de 4 jogadores no Ironball. Repescagem + mata-mata.',
     icone: '⛓️',
     status: 'em_andamento',
