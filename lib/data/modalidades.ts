@@ -158,6 +158,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'sinuca-duplas',
+    nome: 'Sinuca (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de sinuca. Uma dupla vs outra dupla.',
+    icone: '🎱',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'bocha',
     nome: 'Bocha (x1)',
     tipo: 'x1',
