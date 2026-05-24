@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CHAVEAMENTOS, getChaveamentoById, applyResults } from '@/lib/data/chaveamentos';
 import { getBracketResults } from '@/lib/supabase/brackets';
-import BracketFaseView from '@/components/chaveamento/BracketFaseView';
+import ChaveamentoPageClient from '@/components/chaveamento/ChaveamentoPageClient';
 import { cn } from '@/lib/utils';
 
 export async function generateStaticParams() {
@@ -91,19 +91,8 @@ export default async function ChaveamentoDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Phases */}
-        <div className="flex flex-col gap-10">
-          {fasesAtivas.map((fase) => (
-            <BracketFaseView key={fase.id} fase={fase} />
-          ))}
-        </div>
-
-        {fasesAtivas.length === 0 && (
-          <div className="text-center py-16 text-gray-400">
-            <p className="text-4xl mb-3">📋</p>
-            <p>Nenhuma partida registrada ainda.</p>
-          </div>
-        )}
+        {/* Phases — list or tree view (client toggle) */}
+        <ChaveamentoPageClient fases={chaveamento.fases} />
       </div>
     </div>
   );
