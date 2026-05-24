@@ -625,6 +625,18 @@ export const MODALIDADES: Modality[] = [
     participantes: 48,
     maxPorDelegacao: 6,
   },
+  {
+    id: 'futebol-quintetos',
+    nome: 'Futebol (Quintetos)',
+    tipo: 'x5',
+    descricao: 'Confronto de equipes de 5 jogadores no futebol. Fase de grupos + eliminatórias.',
+    icone: '⚽',
+    status: 'em_andamento',
+    formato: 'fase_de_grupos',
+    campeao: null,
+    participantes: 12,
+    maxPorDelegacao: 7,
+  },
 ];
 
 export function getModalidadeById(id: string): Modality | undefined {
