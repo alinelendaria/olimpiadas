@@ -144,13 +144,22 @@ function MesaCard({ fase }: { fase: BracketFase }) {
             className="flex items-center gap-1.5 px-2 py-[5px] border-b border-gray-50 last:border-0"
           >
             <span className="text-[9px] font-mono text-gray-300 w-4 shrink-0">{i + 1}</span>
-            <Image
-              src={`https://flagcdn.com/w40/${eq.delegacao}.png`}
-              alt={eq.delegacao}
-              width={14} height={10}
-              unoptimized
-              className="shrink-0"
-            />
+            <div className="flex gap-0.5 shrink-0">
+              <Image
+                src={`https://flagcdn.com/w40/${eq.delegacao}.png`}
+                alt={eq.delegacao}
+                width={14} height={10}
+                unoptimized
+              />
+              {eq.delegacao2 && (
+                <Image
+                  src={`https://flagcdn.com/w40/${eq.delegacao2}.png`}
+                  alt={eq.delegacao2}
+                  width={14} height={10}
+                  unoptimized
+                />
+              )}
+            </div>
             <span className="text-[11px] text-gray-800 truncate flex-1">{eq.nome}</span>
           </div>
         ))
