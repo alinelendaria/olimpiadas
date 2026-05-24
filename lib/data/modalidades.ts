@@ -518,6 +518,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'boliche-duplas',
+    nome: 'Boliche (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de boliche. Uma dupla vs outra dupla.',
+    icone: '🎳',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 44,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'duplo-x1',
     nome: 'Duplo X1 (Duplas)',
     tipo: 'x2',
