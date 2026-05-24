@@ -872,7 +872,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 12, jogador1: { nome: 'Fpzin',         delegacao: 'cu' }, jogador2: null, jogador2FromRep: 12, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 13, jogador1: { nome: 'ItxBreak',      delegacao: 'au' }, jogador2: { nome: 'Sue',                    delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 14, jogador1: { nome: 'Crise',         delegacao: 'py' }, jogador2: { nome: 'Jetta',                  delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 15, jogador1: { nome: 'Balotelli',     delegacao: 'cu' }, jogador2: { nome: 'Valenttino',             delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 15, jogador1: { nome: 'Balotelli',     delegacao: 'cu' }, jogador2: { nome: 'Roblox Jr',              delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 16, jogador1: { nome: 'Fedits',        delegacao: 'py' }, jogador2: { nome: 'Philipe',                delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
       },
