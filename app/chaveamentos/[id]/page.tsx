@@ -31,7 +31,7 @@ export default async function ChaveamentoDetailPage({ params }: PageProps) {
   const results = await getBracketResults(base.id);
   const chaveamento = applyResults(base, results);
 
-  const fasesAtivas = chaveamento.fases.filter((f) => f.partidas.length > 0);
+  const fasesAtivas = chaveamento.fases.filter((f) => f.partidas.length > 0 || (f.equipes && f.equipes.length > 0));
   const totalPartidas = fasesAtivas.reduce((acc, f) => acc + f.partidas.length, 0);
   const totalConcluidas = fasesAtivas.reduce(
     (acc, f) => acc + f.partidas.filter((p) => p.status === 'finalizado').length,

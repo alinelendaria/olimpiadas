@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(ls \"c:\\\\Users\\\\vinic\\\\OneDrive\\\\Área de Trabalho\\\\olimpaidas tdj\\\\\")",
-      "Read(//c/Users/vinic/OneDrive/Área de Trabalho/**)"
+      "Read(//c/Users/vinic/OneDrive/Área de Trabalho/**)",
+      "PowerShell($lines = \\(Get-Content \"c:\\\\Users\\\\vinic\\\\OneDrive\\\\Área de Trabalho\\\\olimpaidas tdj\\\\lib\\\\data\\\\chaveamentos.ts\"\\).Count; Write-Host \"Total lines: $lines\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

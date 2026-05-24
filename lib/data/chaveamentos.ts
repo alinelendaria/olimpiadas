@@ -1651,47 +1651,42 @@ export const CHAVEAMENTOS: Chaveamento[] = [
       {
         id: 'mesa1',
         nome: 'Mesa 1',
-        partidas: [
-          { id: 1, jogador1: { nome: 'Philipe',  delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'Leo Lele', delegacao: 'au' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Ferreira', delegacao: 'py' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Calili',   delegacao: 'fr' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 5, jogador1: { nome: 'Cururu',   delegacao: 'kr' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 6, jogador1: { nome: 'Everton',  delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        partidas: [],
+        equipes: [
+          { nome: 'Philipe',  delegacao: 'cu' },
+          { nome: 'Leo Lele', delegacao: 'au' },
+          { nome: 'Ferreira', delegacao: 'py' },
+          { nome: 'Calili',   delegacao: 'fr' },
+          { nome: 'Cururu',   delegacao: 'kr' },
+          { nome: 'Everton',  delegacao: 'cu' },
         ],
       },
       {
         id: 'mesa2',
         nome: 'Mesa 2',
-        partidas: [
-          { id: 1, jogador1: { nome: 'Balotelli', delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'Pagniez',   delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Sicko',     delegacao: 'au' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Zampah',    delegacao: 'au' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 5, jogador1: { nome: 'Ale',       delegacao: 'kr' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 6, jogador1: { nome: 'Dolas',     delegacao: 'jp' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        partidas: [],
+        equipes: [
+          { nome: 'Balotelli', delegacao: 'cu' },
+          { nome: 'Pagniez',   delegacao: 'cu' },
+          { nome: 'Sicko',     delegacao: 'au' },
+          { nome: 'Zampah',    delegacao: 'au' },
+          { nome: 'Ale',       delegacao: 'kr' },
+          { nome: 'Dolas',     delegacao: 'jp' },
         ],
       },
       {
         id: 'mesa3',
         nome: 'Mesa 3',
-        partidas: [
-          { id: 1, jogador1: { nome: 'Cueio',    delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: { nome: 'ItxBreak', delegacao: 'au' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: { nome: 'Thiago',   delegacao: 'au' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Aline',    delegacao: 'jp' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 5, jogador1: { nome: 'Fpzin',    delegacao: 'cu' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        partidas: [],
+        equipes: [
+          { nome: 'Cueio',    delegacao: 'cu' },
+          { nome: 'ItxBreak', delegacao: 'au' },
+          { nome: 'Thiago',   delegacao: 'au' },
+          { nome: 'Aline',    delegacao: 'jp' },
+          { nome: 'Fpzin',    delegacao: 'cu' },
         ],
       },
-      {
-        id: 'final',
-        nome: 'Final (Mesa)',
-        partidas: [
-          { id: 1, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 1 }, jogador2FromFase: { faseId: 'mesa2', partidaId: 1 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 2, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 2 }, jogador2FromFase: { faseId: 'mesa2', partidaId: 2 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 3, jogador1: null, jogador2: null, jogador1FromFase: { faseId: 'mesa1', partidaId: 3 }, jogador2FromFase: { faseId: 'mesa3', partidaId: 1 }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-        ],
-      },
+      // Final mesa will be populated with top 2 from each mesa after results
     ],
   },
   {

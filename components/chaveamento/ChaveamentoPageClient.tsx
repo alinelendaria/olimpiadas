@@ -12,7 +12,7 @@ type View = 'list' | 'tree';
 export default function ChaveamentoPageClient({ fases }: { fases: BracketFase[] }) {
   const [view, setView] = useState<View>('list');
 
-  const fasesAtivas = fases.filter(f => f.partidas.length > 0);
+  const fasesAtivas = fases.filter(f => f.partidas.length > 0 || (f.equipes && f.equipes.length > 0));
 
   return (
     <>
