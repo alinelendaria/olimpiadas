@@ -3295,6 +3295,39 @@ export const CHAVEAMENTOS: Chaveamento[] = [
     ],
   },
   {
+    id: 'truco-duplas',
+    nome: 'Truco (Duplas)',
+    icone: '🃏',
+    status: 'em_andamento',
+    totalParticipantes: 16,
+    campeao: null,
+    fases: [
+      {
+        id: 'quartas',
+        nome: 'Quartas de Final',
+        partidas: [
+          { id: 1, jogador1: { nome: 'Shirato e Lenin',    delegacao: 'tr' }, jogador2: { nome: 'Balotelli e Philipe', delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 2, jogador1: { nome: 'Ale e Valenttino',   delegacao: 'kr' }, jogador2: { nome: 'Romero e Cadeirante', delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 3, jogador1: { nome: 'Cueio e Pagniez',    delegacao: 'cu' }, jogador2: { nome: 'Leo Lele e Sicko',    delegacao: 'au' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Fpzin e Everton',    delegacao: 'cu' }, jogador2: { nome: 'Calili e Choose',     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+        ],
+      },
+      {
+        id: 'semifinal',
+        nome: 'Semifinal',
+        partidas: [
+          fromFase(1, 'quartas', 1, 'quartas', 2),
+          fromFase(2, 'quartas', 3, 'quartas', 4),
+        ],
+      },
+      {
+        id: 'final',
+        nome: 'Final',
+        partidas: [fromFase(1, 'semifinal', 1, 'semifinal', 2)],
+      },
+    ],
+  },
+  {
     id: 'curling-duplas',
     nome: 'Curling (Duplas)',
     icone: '🥌',

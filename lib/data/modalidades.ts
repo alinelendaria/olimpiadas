@@ -518,6 +518,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 6,
   },
   {
+    id: 'truco-duplas',
+    nome: 'Truco (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas no Truco. Uma dupla vs outra dupla.',
+    icone: '🃏',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 16,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'curling-duplas',
     nome: 'Curling (Duplas)',
     tipo: 'x2',
