@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils';
 import type { BracketFase, BracketPartida, BracketJogador } from '@/types';
 
 // ── Layout constants ───────────────────────────────────────────
-const SLOT_H  = 84;   // vertical height per slot in base round (px)
-const CARD_H  = 60;   // fixed card height (px)
+const SLOT_H  = 100;  // vertical height per slot in base round (px)
+const CARD_H  = 72;   // estimated card height for SVG connector positioning (px)
 const CARD_W  = 176;  // fixed card width (px)
 const COL_GAP = 44;   // horizontal gap between columns (for connectors)
 const HDR_H   = 28;   // header (phase name) height
@@ -29,7 +29,7 @@ function PlayerRow({
   isLoser: boolean;
 }) {
   return (
-    <div className={cn('flex items-center gap-1 px-2 py-1', isLoser && 'opacity-35')}>
+    <div className={cn('flex items-center gap-1.5 px-2 py-1.5', isLoser && 'opacity-35')}>
       {jogador ? (
         <>
           <Image
@@ -70,7 +70,7 @@ function TreeCard({ partida }: { partida: BracketPartida }) {
         'bg-white border rounded-lg overflow-hidden shadow-sm',
         partida.status === 'ao_vivo' ? 'border-red-200' : 'border-gray-200'
       )}
-      style={{ width: CARD_W, height: CARD_H }}
+      style={{ width: CARD_W }}
     >
       {/* header */}
       <div className="flex items-center gap-1 px-2 py-0.5">
