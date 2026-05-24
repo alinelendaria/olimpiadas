@@ -182,6 +182,18 @@ export const MODALIDADES: Modality[] = [
     maxPorDelegacao: 4,
   },
   {
+    id: 'bocha-duplas',
+    nome: 'Bocha (Duplas)',
+    tipo: 'x2',
+    descricao: 'Confronto de duplas de bocha. Uma dupla vs outra dupla.',
+    icone: '🥏',
+    status: 'em_andamento',
+    formato: 'mata-mata',
+    campeao: null,
+    participantes: 40,
+    maxPorDelegacao: 6,
+  },
+  {
     id: 'basquete',
     nome: 'Basquete (x1)',
     tipo: 'x1',
