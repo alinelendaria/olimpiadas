@@ -33,14 +33,26 @@ function PlayerSlot({
 
   return (
     <div className={base}>
-      <Image
-        src={`https://flagcdn.com/w40/${jogador.delegacao}.png`}
-        alt={jogador.delegacao}
-        width={20}
-        height={14}
-        unoptimized
-        className="flag-img shrink-0"
-      />
+      <div className="flex gap-0.5 shrink-0">
+        <Image
+          src={`https://flagcdn.com/w40/${jogador.delegacao}.png`}
+          alt={jogador.delegacao}
+          width={20}
+          height={14}
+          unoptimized
+          className="flag-img"
+        />
+        {jogador.delegacao2 && (
+          <Image
+            src={`https://flagcdn.com/w40/${jogador.delegacao2}.png`}
+            alt={jogador.delegacao2}
+            width={20}
+            height={14}
+            unoptimized
+            className="flag-img"
+          />
+        )}
+      </div>
       <span className={cn('text-sm truncate', isWinner ? 'text-green-700' : 'text-gray-800')}>
         {jogador.nome}
       </span>

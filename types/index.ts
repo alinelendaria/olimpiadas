@@ -163,6 +163,7 @@ export interface NavLink {
 export interface BracketJogador {
   nome: string;
   delegacao: string;
+  delegacao2?: string; // second flag for mixed-delegation duplas
 }
 
 export interface BracketFromRef {

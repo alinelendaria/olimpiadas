@@ -32,13 +32,22 @@ function PlayerRow({
     <div className={cn('flex items-center gap-1.5 px-2 py-1.5', isLoser && 'opacity-35')}>
       {jogador ? (
         <>
-          <Image
-            src={`https://flagcdn.com/w40/${jogador.delegacao}.png`}
-            alt={jogador.delegacao}
-            width={14} height={10}
-            unoptimized
-            className="shrink-0"
-          />
+          <div className="flex gap-0.5 shrink-0">
+            <Image
+              src={`https://flagcdn.com/w40/${jogador.delegacao}.png`}
+              alt={jogador.delegacao}
+              width={14} height={10}
+              unoptimized
+            />
+            {jogador.delegacao2 && (
+              <Image
+                src={`https://flagcdn.com/w40/${jogador.delegacao2}.png`}
+                alt={jogador.delegacao2}
+                width={14} height={10}
+                unoptimized
+              />
+            )}
+          </div>
           <span className={cn('text-[11px] truncate flex-1', isWinner ? 'font-semibold text-green-700' : 'text-gray-800')}>
             {jogador.nome}
           </span>
