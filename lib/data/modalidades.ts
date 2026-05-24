@@ -436,7 +436,7 @@ export const MODALIDADES: Modality[] = [
   {
     id: 'polo-aquatico',
     nome: 'Polo Aquático (Quartetos)',
-    tipo: 'x1',
+    tipo: 'x4',
     descricao: 'Confronto de equipes de 4 jogadores no polo aquático. Fase de grupos + mata-mata.',
     icone: '🤽',
     status: 'em_andamento',
