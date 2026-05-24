@@ -57,7 +57,7 @@ export interface Match {
   link: string | null;
 }
 
-export type ModalityType = 'x1' | 'x2' | 'x3' | 'traditional' | 'shootout' | 'king' | 'special';
+export type ModalityType = 'x1' | 'x2' | 'x3' | 'x4' | 'x5' | 'traditional' | 'shootout' | 'king' | 'special';
 export type ModalityStatus = 'aguardando' | 'em_andamento' | 'finalizado';
 export type ModalityFormat = 'mata-mata' | 'grupos' | 'round-robin' | 'fase_de_grupos';
 

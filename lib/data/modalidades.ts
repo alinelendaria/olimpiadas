@@ -460,7 +460,7 @@ export const MODALIDADES: Modality[] = [
   {
     id: 'dodgeball-quartetos',
     nome: 'Dodgeball (Quartetos)',
-    tipo: 'x1',
+    tipo: 'x4',
     descricao: 'Confronto de quartetos no dodgeball. Uma equipe de 4 vs outra.',
     icone: '🔥',
     status: 'em_andamento',
