@@ -687,7 +687,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 1, jogador1: { nome: 'Sicko e Zampah',              delegacao: 'au' }, jogador2: { nome: 'Balotelli e Pagniez',              delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 2, jogador1: { nome: 'Wjen e Calili',               delegacao: 'fr' }, jogador2: { nome: 'Everton e Dr. Hannibal Lecter',    delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 3, jogador1: { nome: 'Choose e GK Mão de Dino',     delegacao: 'fr' }, jogador2: { nome: 'Zidani e Nemo',                   delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4, jogador1: { nome: 'Fpzin e Jetta',               delegacao: 'cu' }, jogador2: { nome: 'Haxx e Plank',                    delegacao: 'un' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4, jogador1: { nome: 'Fpzin e Jetta',               delegacao: 'cu' }, jogador2: { nome: 'Haxx e Plank',                    delegacao: 'ec' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 5, jogador1: { nome: 'Philipe e Cueio',             delegacao: 'cu' }, jogador2: { nome: 'Exausto e Aline',                 delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6, jogador1: { nome: 'Xz e Dolas',                  delegacao: 'jp' }, jogador2: { nome: 'Sue e Splat',                     delegacao: 'fr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
         ],
