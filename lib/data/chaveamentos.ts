@@ -746,7 +746,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 1,  jogador1: { nome: 'Iniciante',           delegacao: 'mx' }, jogador2: { nome: 'Jetta',            delegacao: 'cu' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 2,  jogador1: { nome: 'Choose',              delegacao: 'fr' }, jogador2: { nome: 'Cururu',           delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 3,  jogador1: { nome: 'Crise',               delegacao: 'py' }, jogador2: { nome: 'Romero',           delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 4,  jogador1: { nome: 'Fedits',              delegacao: 'py' }, jogador2: { nome: 'Valenttino',       delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 4,  jogador1: { nome: 'Fedits',              delegacao: 'py' }, jogador2: { nome: 'Roblox Jr',        delegacao: 'kr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 5,  jogador1: { nome: 'Raul',                delegacao: 'au' }, jogador2: { nome: 'Van Persie',       delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6,  jogador1: { nome: 'Cueio',               delegacao: 'cu' }, jogador2: { nome: 'Aline',            delegacao: 'jp' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 7,  jogador1: { nome: 'Zampah',              delegacao: 'au' }, jogador2: { nome: 'SPFC Supercampeão',delegacao: 'tr' }, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
