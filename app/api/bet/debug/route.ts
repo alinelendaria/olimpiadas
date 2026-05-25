@@ -23,10 +23,18 @@ export async function GET() {
     const { data: { user } } = await supabase.auth.getUser();
     const discordId = user?.identities?.find(i => i.provider === 'discord')?.id;
 
+    // Test 3: can we do the full join that /bet page uses?
+    const { data: fullEvents, error: joinErr } = await supabase
+      .from('bet_events')
+      .select('*, bet_options(*)')
+      .order('created_at', { ascending: false });
+
     return NextResponse.json({
       events_count: events?.length ?? 0,
       events_error: evErr?.message ?? null,
       options_error: optErr?.message ?? null,
+      join_error: joinErr?.message ?? null,
+      events_with_options: fullEvents ?? [],
       user_id: user?.id ?? null,
       discord_id: discordId ?? null,
       is_admin: discordId === '409098047344345088',
