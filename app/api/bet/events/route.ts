@@ -4,17 +4,25 @@ import { getAdminUser } from '@/lib/bet/admin';
 
 export const dynamic = 'force-dynamic';
 
-// GET — lista todos os eventos com opções
+// GET — lista todos os eventos com opções (duas queries separadas para evitar join ambíguo)
 export async function GET() {
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from('bet_events')
-      .select('*, bet_options!bet_options_event_id_fkey(*)')
-      .order('created_at', { ascending: false });
 
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    return NextResponse.json({ events: data ?? [] });
+    const [{ data: events, error: evErr }, { data: options, error: optErr }] = await Promise.all([
+      supabase.from('bet_events').select('*').order('created_at', { ascending: false }),
+      supabase.from('bet_options').select('*').order('created_at', { ascending: true }),
+    ]);
+
+    if (evErr)  return NextResponse.json({ error: evErr.message },  { status: 500 });
+    if (optErr) return NextResponse.json({ error: optErr.message }, { status: 500 });
+
+    const eventsWithOptions = (events ?? []).map(e => ({
+      ...e,
+      bet_options: (options ?? []).filter(o => o.event_id === e.id),
+    }));
+
+    return NextResponse.json({ events: eventsWithOptions });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
@@ -52,13 +60,13 @@ export async function POST(req: NextRequest) {
 
     if (optErr) return NextResponse.json({ error: optErr.message }, { status: 500 });
 
-    const { data: full } = await supabase
-      .from('bet_events')
-      .select('*, bet_options!bet_options_event_id_fkey(*)')
-      .eq('id', event.id)
-      .single();
+    // Busca opções separadamente para evitar join ambíguo
+    const { data: opts } = await supabase
+      .from('bet_options')
+      .select('*')
+      .eq('event_id', event.id);
 
-    return NextResponse.json({ event: full }, { status: 201 });
+    return NextResponse.json({ event: { ...event, bet_options: opts ?? [] } }, { status: 201 });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
