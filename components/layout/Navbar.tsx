@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
 import BetProfileModal from '@/components/bet/BetProfileModal';
+import CoinIcon from '@/components/bet/CoinIcon';
 
 const NAV_LINKS = [
   { href: '/',               label: 'Home' },
@@ -96,7 +97,7 @@ export default function Navbar() {
                       : 'text-green-600 border-green-300 bg-green-50 hover:bg-green-500 hover:text-white hover:border-green-500'
                   )}
                 >
-                  <span className="text-xs">🪙</span>
+                  <CoinIcon size={15} />
                   {link.label}
                 </Link>
               );
@@ -201,7 +202,7 @@ export default function Navbar() {
                           : 'text-green-600 border-green-300 bg-green-50 hover:bg-green-500 hover:text-white hover:border-green-500'
                       )}
                     >
-                      <span>🪙</span>
+                      <CoinIcon size={16} />
                       {link.label}
                     </Link>
                   );
