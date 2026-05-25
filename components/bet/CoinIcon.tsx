@@ -14,42 +14,37 @@ export default function CoinIcon({ size = 16, className = '' }: Props) {
       className={className}
       style={{ display: 'inline', verticalAlign: 'middle', flexShrink: 0 }}
     >
-      <defs>
-        <radialGradient id="coin-gold" cx="35%" cy="30%" r="70%">
-          <stop offset="0%"   stopColor="#FFF176" />
-          <stop offset="50%"  stopColor="#FFD700" />
-          <stop offset="100%" stopColor="#B8860B" />
-        </radialGradient>
-        <radialGradient id="coin-skin" cx="40%" cy="35%" r="65%">
-          <stop offset="0%"   stopColor="#B0FFB0" />
-          <stop offset="100%" stopColor="#2ECC71" />
-        </radialGradient>
-      </defs>
-
-      {/* Coin border glow */}
-      <circle cx="12" cy="12" r="11.2" fill="#B8860B" />
-      {/* Coin face */}
-      <circle cx="12" cy="12" r="10.5" fill="url(#coin-gold)" />
+      {/* Coin shadow/border */}
+      <circle cx="12" cy="12" r="11.5" fill="#92650a" />
+      {/* Coin face — gold */}
+      <circle cx="12" cy="11.5" r="10.8" fill="#FFD700" />
+      {/* Coin highlight top-left */}
+      <ellipse cx="8" cy="6" rx="3.5" ry="2" fill="#FFF176" opacity="0.5" transform="rotate(-30 8 6)" />
       {/* Inner ring */}
-      <circle cx="12" cy="12" r="9" fill="none" stroke="#B8860B" strokeWidth="0.4" opacity="0.5" />
+      <circle cx="12" cy="11.5" r="9.2" fill="none" stroke="#B8860B" strokeWidth="0.5" opacity="0.6" />
 
-      {/* Alien head */}
-      <ellipse cx="12" cy="13" rx="5.8" ry="6.5" fill="url(#coin-skin)" />
+      {/* Alien head — green */}
+      <ellipse cx="12" cy="13" rx="5.8" ry="6.2" fill="#4ade80" />
+      {/* Alien head shadow bottom */}
+      <ellipse cx="12" cy="16" rx="4.5" ry="2.5" fill="#22c55e" opacity="0.5" />
 
-      {/* Big oval alien eyes */}
-      <ellipse cx="9.6"  cy="12" rx="1.9" ry="2.4" fill="#0d1117" />
-      <ellipse cx="14.4" cy="12" rx="1.9" ry="2.4" fill="#0d1117" />
+      {/* Big oval alien eyes — dark */}
+      <ellipse cx="9.5"  cy="12" rx="1.9" ry="2.4" fill="#111827" />
+      <ellipse cx="14.5" cy="12" rx="1.9" ry="2.4" fill="#111827" />
 
       {/* Eye shine */}
-      <ellipse cx="10.2" cy="10.9" rx="0.65" ry="0.85" fill="white" opacity="0.55" />
-      <ellipse cx="15.0" cy="10.9" rx="0.65" ry="0.85" fill="white" opacity="0.55" />
+      <ellipse cx="10.1" cy="10.9" rx="0.65" ry="0.85" fill="white" opacity="0.6" />
+      <ellipse cx="15.1" cy="10.9" rx="0.65" ry="0.85" fill="white" opacity="0.6" />
 
-      {/* Tiny smile */}
-      <path d="M10 15.5 Q12 17 14 15.5" stroke="#1a5c35" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+      {/* Smile */}
+      <path d="M10 15.5 Q12 17 14 15.5" stroke="#15803d" strokeWidth="0.8" fill="none" strokeLinecap="round" />
 
-      {/* Antenna */}
-      <line x1="12" y1="6.5" x2="12" y2="8.2" stroke="#B8860B" strokeWidth="0.9" strokeLinecap="round" />
-      <circle cx="12" cy="5.8" r="1.1" fill="#FFD700" stroke="#B8860B" strokeWidth="0.5" />
+      {/* Antenna stem */}
+      <line x1="12" y1="6.8" x2="12" y2="8.5" stroke="#B8860B" strokeWidth="1" strokeLinecap="round" />
+      {/* Antenna ball */}
+      <circle cx="12" cy="6" r="1.2" fill="#FFD700" stroke="#92650a" strokeWidth="0.6" />
+      {/* Antenna ball shine */}
+      <circle cx="11.5" cy="5.5" r="0.4" fill="white" opacity="0.7" />
     </svg>
   );
 }
