@@ -11,33 +11,27 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white mt-16">
+    <footer className="border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 font-bold text-gray-900 mb-1">
+            <div className="flex items-center gap-2 font-bold text-gray-900 dark:text-slate-100 mb-1">
               <span>🏅</span>
               <span>Olimpíadas TDJ</span>
             </div>
-            <p className="text-sm text-gray-400">3ª Edição · Comunidade TDJ</p>
+            <p className="text-sm text-gray-400 dark:text-slate-500">3ª Edição · Comunidade TDJ</p>
           </div>
 
-          {/* Links */}
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
             {LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-              >
+              <Link key={l.href} href={l.href} className="text-sm text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
                 {l.label}
               </Link>
             ))}
           </nav>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-100 text-xs text-gray-400 text-center">
+        <div className="mt-8 pt-6 border-t border-gray-100 dark:border-slate-800 text-xs text-gray-400 dark:text-slate-500 text-center">
           Feito com ❤️ para a comunidade TDJ Haxball
         </div>
       </div>

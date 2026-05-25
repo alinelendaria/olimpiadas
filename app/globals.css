@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── LIGHT MODE ─────────────────────────────────────────── */
 :root {
   --accent:       #1d4ed8;
   --accent-hover: #1e40af;
@@ -18,6 +19,61 @@
   --bronze:       #92400e;
 }
 
+/* ── DARK MODE ──────────────────────────────────────────── */
+.dark {
+  --accent:       #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: #172554;
+  --border:       #334155;
+  --text:         #f1f5f9;
+  --text-muted:   #94a3b8;
+  --bg:           #0f172a;
+  --bg-subtle:    #1e293b;
+  --gold:         #fbbf24;
+  --silver:       #94a3b8;
+  --bronze:       #d97706;
+  color-scheme: dark;
+}
+
+/* Surfaces */
+.dark .bg-white          { background-color: #1e293b !important; }
+.dark .bg-gray-50        { background-color: #0f172a !important; }
+.dark .bg-gray-100       { background-color: #1e293b !important; }
+.dark .bg-accent-light   { background-color: #172554 !important; }
+
+/* Borders */
+.dark .border-gray-100   { border-color: #334155 !important; }
+.dark .border-gray-200   { border-color: #475569 !important; }
+.dark .border-t          { border-color: #334155; }
+
+/* Text */
+.dark .text-gray-900     { color: #f1f5f9 !important; }
+.dark .text-gray-800     { color: #e2e8f0 !important; }
+.dark .text-gray-700     { color: #cbd5e1 !important; }
+.dark .text-gray-600     { color: #94a3b8 !important; }
+.dark .text-gray-500     { color: #64748b !important; }
+.dark .text-gray-400     { color: #475569 !important; }
+
+/* Hover states */
+.dark .hover\:bg-gray-50:hover  { background-color: #1e293b !important; }
+.dark .hover\:text-gray-900:hover { color: #f1f5f9 !important; }
+
+/* Inputs */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #0f172a;
+  border-color: #334155 !important;
+  color: #f1f5f9;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: #475569; }
+
+/* Scrollbar */
+.dark ::-webkit-scrollbar-track { background: #1e293b; }
+.dark ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+/* ── BASE ───────────────────────────────────────────────── */
 * { box-sizing: border-box; }
 
 body {
@@ -25,6 +81,7 @@ body {
   color: var(--text);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::-webkit-scrollbar        { width: 5px; }
@@ -62,3 +119,7 @@ body {
 .rank-1 { background-color: #fffbeb; }
 .rank-2 { background-color: #f9fafb; }
 .rank-3 { background-color: #fef3c7; }
+
+.dark .rank-1 { background-color: #1c1a0e; }
+.dark .rank-2 { background-color: #0f172a; }
+.dark .rank-3 { background-color: #1c1a0e; }

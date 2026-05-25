@@ -13,10 +13,22 @@ export const metadata: Metadata = {
   },
 };
 
+// Script inline que roda ANTES do React hidratar — evita flash de tema errado
+const themeScript = `
+try {
+  const t = localStorage.getItem('theme');
+  if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+} catch(e){}
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
+        {/* Anti-FOUC: aplica dark class antes de qualquer render */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -24,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white text-gray-900 min-h-screen">
+      <body className="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 min-h-screen">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
