@@ -11,7 +11,7 @@ export async function GET(
     const supabase = createClient();
     const { data: event, error } = await supabase
       .from('bet_events')
-      .select('*, bet_options(*)')
+      .select('*, bet_options!bet_options_event_id_fkey(*)')
       .eq('id', params.id)
       .single();
 
@@ -22,7 +22,7 @@ export async function GET(
     if (user) {
       const { data } = await supabase
         .from('bet_bets')
-        .select('*, bet_options(*)')
+        .select('*, bet_options!bet_options_event_id_fkey(*)')
         .eq('event_id', params.id)
         .eq('user_id', user.id)
         .single();

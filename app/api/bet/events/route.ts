@@ -10,7 +10,7 @@ export async function GET() {
     const supabase = createClient();
     const { data, error } = await supabase
       .from('bet_events')
-      .select('*, bet_options(*)')
+      .select('*, bet_options!bet_options_event_id_fkey(*)')
       .order('created_at', { ascending: false });
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
     const { data: full } = await supabase
       .from('bet_events')
-      .select('*, bet_options(*)')
+      .select('*, bet_options!bet_options_event_id_fkey(*)')
       .eq('id', event.id)
       .single();
 
