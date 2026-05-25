@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, TrendingUp, TrendingDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import CoinIcon from '@/components/bet/CoinIcon';
 import type { BetUser, BetBet } from '@/types/bet';
 
 interface Props {
@@ -21,12 +22,12 @@ function Stat({ label, value, highlight }: { label: string; value: string | numb
 }
 
 export default function BetProfileModal({ onClose }: Props) {
-  const [profile, setProfile]       = useState<BetUser | null>(null);
-  const [bets, setBets]             = useState<BetBet[]>([]);
-  const [loading, setLoading]       = useState(true);
+  const [profile, setProfile]           = useState<BetUser | null>(null);
+  const [bets, setBets]                 = useState<BetBet[]>([]);
+  const [loading, setLoading]           = useState(true);
   const [dailyLoading, setDailyLoading] = useState(false);
-  const [dailyMsg, setDailyMsg]     = useState('');
-  const [countdown, setCountdown]   = useState('');
+  const [dailyMsg, setDailyMsg]         = useState('');
+  const [countdown, setCountdown]       = useState('');
 
   const fetchProfile = useCallback(async () => {
     const res = await fetch('/api/bet/profile');
@@ -37,8 +38,6 @@ export default function BetProfileModal({ onClose }: Props) {
   }, []);
 
   const fetchBets = useCallback(async () => {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    // Fetch via profile endpoint includes bets — fallback to basic
     try {
       const res = await fetch('/api/bet/my-bets');
       if (res.ok) {
@@ -53,11 +52,9 @@ export default function BetProfileModal({ onClose }: Props) {
     fetchBets();
   }, [fetchProfile, fetchBets]);
 
-  // Countdown para próxima recompensa
   useEffect(() => {
     if (!profile?.last_daily_reward) return;
     const next = new Date(profile.last_daily_reward).getTime() + 24 * 60 * 60 * 1000;
-
     const tick = () => {
       const diff = next - Date.now();
       if (diff <= 0) { setCountdown(''); return; }
@@ -114,7 +111,7 @@ export default function BetProfileModal({ onClose }: Props) {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 bg-gradient-to-r from-accent-light to-white">
           <div className="flex items-center gap-2">
-            <span className="text-lg">🪙</span>
+            <CoinIcon size={20} />
             <span className="font-bold text-gray-900 text-sm">TDJ BET</span>
           </div>
           <button onClick={onClose} className="p-1 rounded-lg text-gray-400 hover:text-gray-700 transition-colors">
@@ -133,7 +130,10 @@ export default function BetProfileModal({ onClose }: Props) {
           <div className="px-5 py-4 space-y-4">
             {/* Saldo */}
             <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-100 rounded-xl px-4 py-3 text-center">
-              <p className="text-2xl font-extrabold text-amber-700">🪙 {profile.saldo.toLocaleString()}</p>
+              <div className="flex items-center justify-center gap-2">
+                <CoinIcon size={28} />
+                <p className="text-2xl font-extrabold text-amber-700">{profile.saldo.toLocaleString()}</p>
+              </div>
               <p className="text-xs text-amber-600 mt-0.5">moedas fictícias</p>
             </div>
 
@@ -157,7 +157,7 @@ export default function BetProfileModal({ onClose }: Props) {
                 <p className="text-[10px] text-red-400">Total perdido</p>
               </div>
               <div className="bg-amber-50 border border-amber-100 rounded-xl px-2 py-2 text-center">
-                <span className="text-base block mb-0.5">🏆</span>
+                <span className="block mb-0.5"><CoinIcon size={14} /></span>
                 <p className="text-xs font-bold text-amber-700">{profile.maior_vitoria.toLocaleString()}</p>
                 <p className="text-[10px] text-amber-500">Maior vitória</p>
               </div>
@@ -185,8 +185,9 @@ export default function BetProfileModal({ onClose }: Props) {
                 )}
               >
                 {dailyLoading ? 'Processando...' :
-                  canClaimDaily ? '🎁 Resgatar 100 moedas' :
-                  `⏳ Disponível em ${countdown}`}
+                  canClaimDaily
+                    ? <span className="flex items-center justify-center gap-1.5">🎁 Resgatar 100 <CoinIcon size={15} /></span>
+                    : `⏳ Disponível em ${countdown}`}
               </button>
               {dailyMsg && (
                 <p className={cn('text-xs text-center mt-1.5', dailyMsg.startsWith('+') ? 'text-green-600' : 'text-gray-500')}>
@@ -210,7 +211,9 @@ export default function BetProfileModal({ onClose }: Props) {
                           {bet.bet_options?.texto ?? '—'}
                         </span>
                       </div>
-                      <span className="text-gray-500 shrink-0 ml-2">🪙 {bet.valor}</span>
+                      <span className="text-gray-500 shrink-0 ml-2 flex items-center gap-0.5">
+                        <CoinIcon size={11} /> {bet.valor}
+                      </span>
                     </div>
                   ))}
                 </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import CoinIcon from '@/components/bet/CoinIcon';
 import type { BetEvent, BetOption, BetUser } from '@/types/bet';
 
 interface Props {
@@ -14,9 +15,9 @@ interface Props {
 
 export default function BetPlaceModal({ event, profile, onClose, onSuccess }: Props) {
   const [selectedOption, setSelectedOption] = useState<BetOption | null>(null);
-  const [valor, setValor] = useState('');
+  const [valor, setValor]   = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError]   = useState('');
 
   const options  = event.bet_options ?? [];
   const valorNum = parseInt(valor) || 0;
@@ -62,7 +63,9 @@ export default function BetPlaceModal({ event, profile, onClose, onSuccess }: Pr
           {/* Saldo */}
           <div className="flex items-center justify-between bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5">
             <span className="text-xs text-amber-700 font-medium">Seu saldo</span>
-            <span className="text-sm font-bold text-amber-800">🪙 {profile.saldo.toLocaleString()}</span>
+            <span className="flex items-center gap-1.5 text-sm font-bold text-amber-800">
+              <CoinIcon size={16} /> {profile.saldo.toLocaleString()}
+            </span>
           </div>
 
           {/* Opções */}
@@ -133,7 +136,9 @@ export default function BetPlaceModal({ event, profile, onClose, onSuccess }: Pr
                 <span className="text-[11px]">se {selectedOption.texto} vencer</span>
               </div>
               <div className="text-right">
-                <span className="block text-sm font-bold text-gray-900">🪙 {retorno.toLocaleString()}</span>
+                <span className="flex items-center justify-end gap-1 text-sm font-bold text-gray-900">
+                  <CoinIcon size={14} /> {retorno.toLocaleString()}
+                </span>
                 <span className={cn('text-[11px] font-medium', lucro > 0 ? 'text-green-600' : 'text-red-500')}>
                   {lucro > 0 ? '+' : ''}{lucro.toLocaleString()} moedas
                 </span>
@@ -148,7 +153,11 @@ export default function BetPlaceModal({ event, profile, onClose, onSuccess }: Pr
             disabled={!selectedOption || valorNum < 1 || loading}
             className="w-full py-3 rounded-xl bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            {loading ? 'Processando...' : `Apostar 🪙 ${valorNum > 0 ? valorNum.toLocaleString() : '—'}`}
+            {loading ? 'Processando...' : (
+              <span className="flex items-center justify-center gap-1.5">
+                Apostar <CoinIcon size={15} /> {valorNum > 0 ? valorNum.toLocaleString() : '—'}
+              </span>
+            )}
           </button>
         </div>
       </div>

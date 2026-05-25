@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import CoinIcon from '@/components/bet/CoinIcon';
 import type { BetEvent } from '@/types/bet';
 
 const STATUS_LABEL = { aberta: 'Aberta', encerrada: 'Encerrada', cancelada: 'Cancelada' };
@@ -18,7 +19,7 @@ interface Props {
 
 export default function BetEventCard({ event, userBetOptionId }: Props) {
   const options = event.bet_options ?? [];
-  const maxOdd  = Math.max(...options.map(o => Number(o.odd)));
+  const maxOdd  = options.length > 0 ? Math.max(...options.map(o => Number(o.odd))) : 0;
 
   return (
     <Link
@@ -65,9 +66,11 @@ export default function BetEventCard({ event, userBetOptionId }: Props) {
         <span className="text-[11px] text-gray-400">
           {options.length} {options.length === 1 ? 'opção' : 'opções'}
         </span>
-        <span className="text-[11px] text-amber-600 font-medium">
-          até ×{maxOdd.toFixed(2)}
-        </span>
+        {maxOdd > 0 && (
+          <span className="flex items-center gap-1 text-[11px] text-amber-600 font-medium">
+            até ×{maxOdd.toFixed(2)} <CoinIcon size={12} />
+          </span>
+        )}
       </div>
     </Link>
   );
