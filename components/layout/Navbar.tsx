@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { href: '/medalhas',       label: 'Medalhas' },
   { href: '/ranking',        label: 'Ranking' },
   { href: '/ao-vivo',        label: 'Ao Vivo', isLive: true },
-  { href: '/bet',            label: '🪙 BET' },
+  { href: '/bet',            label: 'TDJ BET', isBet: true },
 ];
 
 const DiscordIcon = () => (
@@ -83,7 +83,24 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => {
-            const active = pathname === link.href;
+            const active = pathname === link.href || pathname.startsWith(link.href + '/') && link.href !== '/';
+            if (link.isBet) {
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-semibold transition-colors duration-150 border',
+                    active
+                      ? 'bg-green-500 text-white border-green-500'
+                      : 'text-green-600 border-green-300 bg-green-50 hover:bg-green-500 hover:text-white hover:border-green-500'
+                  )}
+                >
+                  <span className="text-xs">🪙</span>
+                  {link.label}
+                </Link>
+              );
+            }
             return (
               <Link
                 key={link.href}
@@ -172,6 +189,23 @@ export default function Navbar() {
             <div className="px-4 py-3 flex flex-col gap-1">
               {NAV_LINKS.map((link) => {
                 const active = pathname === link.href;
+                if (link.isBet) {
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={cn(
+                        'flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-semibold border transition-colors',
+                        active
+                          ? 'bg-green-500 text-white border-green-500'
+                          : 'text-green-600 border-green-300 bg-green-50 hover:bg-green-500 hover:text-white hover:border-green-500'
+                      )}
+                    >
+                      <span>🪙</span>
+                      {link.label}
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={link.href}
