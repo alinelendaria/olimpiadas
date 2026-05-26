@@ -97,7 +97,7 @@ export default function HeroBanner() {
               ))}
             </div>
             <p className="text-center text-xs text-gray-400 mt-3">
-              + Paraguai, Turquia, Cuba e Delegação Independente
+              + Paraguai, Turquia, Cuba e Equador
             </p>
           </motion.div>
         </div>

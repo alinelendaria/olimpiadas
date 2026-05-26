@@ -1419,7 +1419,7 @@ export const CHAVEAMENTOS: Chaveamento[] = [
           { id: 4,  jogador1: { nome: 'Ferreira',         delegacao: 'py'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 5,  jogador1: { nome: 'SPFC Supercampeão',delegacao: 'tr'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 6,  jogador1: { nome: 'Nemo',             delegacao: 'kr'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
-          { id: 7,  jogador1: { nome: 'Dor',              delegacao: 'independent' }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
+          { id: 7,  jogador1: { nome: 'Dor',              delegacao: 'equador'     }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 8,  jogador1: { nome: 'Ex Rouba Gol',     delegacao: 'jp'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 9,  jogador1: { nome: 'Punha',            delegacao: 'mx'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },
           { id: 10, jogador1: { nome: 'Cururu',           delegacao: 'kr'          }, jogador2: null, vencedor: null, placar1: null, placar2: null, status: 'pendente' },

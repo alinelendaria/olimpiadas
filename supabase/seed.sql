@@ -13,7 +13,7 @@ insert into countries (id, name, code, flag_emoji, flag_url, color_primary, colo
   ('11111111-0000-0000-0000-000000000006', 'México',      'MEX', '🇲🇽', 'https://flagcdn.com/mx.svg',  '#006847', '#CE1126'),
   ('11111111-0000-0000-0000-000000000007', 'Turquia',     'TUR', '🇹🇷', 'https://flagcdn.com/tr.svg',  '#E30A17', '#FFFFFF'),
   ('11111111-0000-0000-0000-000000000008', 'Cuba',        'CUB', '🇨🇺', 'https://flagcdn.com/cu.svg',  '#002A8F', '#CF142B'),
-  ('11111111-0000-0000-0000-000000000009', 'Independente','IND', '🏴',  'https://flagcdn.com/un.svg',  '#374151', '#6B7280');
+  ('11111111-0000-0000-0000-000000000009', 'Equador',     'ECU', '🇪🇨', 'https://flagcdn.com/ec.svg',  '#FFD100', '#003DA5');
 
 -- ─── Players — Austrália ─────────────────────────────────────────────────────
 insert into players (name, country_id) values
@@ -107,7 +107,7 @@ insert into players (name, country_id) values
   ('Jetta',              '11111111-0000-0000-0000-000000000008'),
   ('Fpzin',              '11111111-0000-0000-0000-000000000008');
 
--- ─── Players — Independente ──────────────────────────────────────────────────
+-- ─── Players — Equador ───────────────────────────────────────────────────────
 insert into players (name, country_id) values
   ('Haxx',  '11111111-0000-0000-0000-000000000009'),
   ('Dor',   '11111111-0000-0000-0000-000000000009'),
